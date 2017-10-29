@@ -1,14 +1,23 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="ArialBold.ttf">
+            <string>Arial-BoldMT</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DoughNationAppBeta" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +25,146 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Rhc-A3-rt8">
+                                <rect key="frame" x="85.5" y="308.5" width="250" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </stackView>
+                            <imageView userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" image="shutterstock_305259533.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="ibR-cJ-Jl7">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Htq-ht-XLS">
+                                <rect key="frame" x="106" y="248" width="162" height="170"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="170" id="Zzi-tL-pUd"/>
+                                    <constraint firstAttribute="width" constant="162" id="ec7-o7-NAe"/>
+                                </constraints>
+                                <size key="titleShadowOffset" width="4" height="3"/>
+                                <state key="normal" image="IMG_2457.PNG">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Scan and Give">
+                                            <attributes>
+                                                <color key="NSBackgroundColor" red="0.092256390824154211" green="0.16641081895444379" blue="0.39306436894110719" alpha="0.21135688266871167" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="32" name=".AppleSystemUIFont"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <connections>
+                                    <segue destination="SMe-mf-SOT" kind="show" id="7OM-Kx-FEK"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="SCAN" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DTt-ha-3kf">
+                                <rect key="frame" x="155" y="225" width="65" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="uoj-Wz-gLE">
+                                <rect key="frame" x="62" y="518" width="250" height="50"/>
+                                <subviews>
+                                    <searchBar contentMode="redraw" text="DoughNation Code" translatesAutoresizingMaskIntoConstraints="NO" id="vqc-xY-tds">
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="50"/>
+                                        <color key="backgroundColor" red="0.0078431372550000003" green="0.66274509800000003" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="250" id="ibH-Ef-ccF"/>
+                                            <constraint firstAttribute="height" constant="50" id="sem-C9-Bhb"/>
+                                        </constraints>
+                                        <color key="barTintColor" red="0.0078431372550000003" green="0.66274509800000003" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <offsetWrapper key="searchTextPositionAdjustment" horizontal="15" vertical="0.0"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="Fgp-dh-f8U"/>
+                                        </connections>
+                                    </searchBar>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="vqc-xY-tds" firstAttribute="centerX" secondItem="uoj-Wz-gLE" secondAttribute="centerX" id="wQ6-4F-NBv"/>
+                                </constraints>
+                            </stackView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="SEARCH" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gxI-Wp-W6t">
+                                <rect key="frame" x="139" y="472" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0078431372549019607" green="0.66274509803921566" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="vqc-xY-tds" firstAttribute="top" secondItem="Htq-ht-XLS" secondAttribute="bottom" constant="100" id="2YA-sf-JJ1"/>
+                            <constraint firstItem="uoj-Wz-gLE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9Qn-Sk-1HE"/>
+                            <constraint firstItem="Htq-ht-XLS" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="iWO-1o-fht"/>
+                            <constraint firstItem="Htq-ht-XLS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nPj-ue-BiI"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="searchbar" destination="vqc-xY-tds" id="AuY-Xg-s8L"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="142.57871064467767"/>
+        </scene>
+        <!--View Controllerqr-->
+        <scene sceneID="QFk-eA-W9C">
+            <objects>
+                <viewController id="SMe-mf-SOT" customClass="ViewControllerqr" customModule="DoughNationAppBeta" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oGp-3a-rSI"/>
+                        <viewControllerLayoutGuide type="bottom" id="f8U-fo-46e"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="c1T-T5-JHy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" image="shutterstock_305259533.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="1o8-lG-a26">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gpU-9e-Ww0">
+                                <rect key="frame" x="67.5" y="213.5" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="6Kr-f1-S7e"/>
+                                    <constraint firstAttribute="width" constant="240" id="Mfl-V7-WjO"/>
+                                </constraints>
+                            </imageView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="seU-My-kcE">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Back" id="vPd-AU-FHp">
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="show" id="nlO-cr-RxE"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0078431372550000003" green="0.66274509800000003" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="gpU-9e-Ww0" firstAttribute="centerX" secondItem="c1T-T5-JHy" secondAttribute="centerX" id="0lp-te-Tht"/>
+                            <constraint firstItem="gpU-9e-Ww0" firstAttribute="centerY" secondItem="c1T-T5-JHy" secondAttribute="centerY" id="Mem-Z9-xWA"/>
+                            <constraint firstItem="gpU-9e-Ww0" firstAttribute="centerY" secondItem="c1T-T5-JHy" secondAttribute="centerY" id="iMe-9w-AxX"/>
+                            <constraint firstItem="gpU-9e-Ww0" firstAttribute="centerX" secondItem="c1T-T5-JHy" secondAttribute="centerX" id="kDg-OT-eJv"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="square" destination="gpU-9e-Ww0" id="h1c-eR-Tov"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yLT-6y-AWE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="828" y="143.47826086956522"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="IMG_2457.PNG" width="2257" height="2257"/>
+        <image name="shutterstock_305259533.jpg" width="3550" height="1850"/>
+    </resources>
 </document>

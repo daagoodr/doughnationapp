@@ -14,6 +14,10 @@
 		9A42212F1F5F9C77004BA4BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A42212D1F5F9C77004BA4BF /* LaunchScreen.storyboard */; };
 		9A42213A1F5F9C77004BA4BF /* DoughNationAppBetaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4221391F5F9C77004BA4BF /* DoughNationAppBetaTests.swift */; };
 		9A4221451F5F9C77004BA4BF /* DoughNationAppBetaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4221441F5F9C77004BA4BF /* DoughNationAppBetaUITests.swift */; };
+		9A4221531F5FA052004BA4BF /* ViewControllerqr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4221521F5FA052004BA4BF /* ViewControllerqr.swift */; };
+		9ACABEC51F9AF53600A9EA70 /* IMG_2457.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 9ACABEC41F9AF53600A9EA70 /* IMG_2457.PNG */; };
+		9ACABEC71F9AFBEB00A9EA70 /* LogoInvertCAPSNoBorder.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9ACABEC61F9AFBEB00A9EA70 /* LogoInvertCAPSNoBorder.jpg */; };
+		9ACABEC91F9B135100A9EA70 /* shutterstock_305259533.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9ACABEC81F9B135100A9EA70 /* shutterstock_305259533.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +51,10 @@
 		9A4221401F5F9C77004BA4BF /* DoughNationAppBetaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DoughNationAppBetaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A4221441F5F9C77004BA4BF /* DoughNationAppBetaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoughNationAppBetaUITests.swift; sourceTree = "<group>"; };
 		9A4221461F5F9C77004BA4BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9A4221521F5FA052004BA4BF /* ViewControllerqr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerqr.swift; sourceTree = "<group>"; };
+		9ACABEC41F9AF53600A9EA70 /* IMG_2457.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = IMG_2457.PNG; path = ../../../Downloads/IMG_2457.PNG; sourceTree = "<group>"; };
+		9ACABEC61F9AFBEB00A9EA70 /* LogoInvertCAPSNoBorder.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = LogoInvertCAPSNoBorder.jpg; path = ../../../Downloads/LogoInvertCAPSNoBorder.jpg; sourceTree = "<group>"; };
+		9ACABEC81F9B135100A9EA70 /* shutterstock_305259533.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = shutterstock_305259533.jpg; path = ../../../Downloads/shutterstock_305259533.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,10 +106,14 @@
 			isa = PBXGroup;
 			children = (
 				9A4221241F5F9C77004BA4BF /* AppDelegate.swift */,
-				9A4221261F5F9C77004BA4BF /* ViewController.swift */,
-				9A4221281F5F9C77004BA4BF /* Main.storyboard */,
-				9A42212B1F5F9C77004BA4BF /* Assets.xcassets */,
 				9A42212D1F5F9C77004BA4BF /* LaunchScreen.storyboard */,
+				9A4221281F5F9C77004BA4BF /* Main.storyboard */,
+				9A4221261F5F9C77004BA4BF /* ViewController.swift */,
+				9A4221521F5FA052004BA4BF /* ViewControllerqr.swift */,
+				9A42212B1F5F9C77004BA4BF /* Assets.xcassets */,
+				9ACABEC81F9B135100A9EA70 /* shutterstock_305259533.jpg */,
+				9ACABEC61F9AFBEB00A9EA70 /* LogoInvertCAPSNoBorder.jpg */,
+				9ACABEC41F9AF53600A9EA70 /* IMG_2457.PNG */,
 				9A4221301F5F9C77004BA4BF /* Info.plist */,
 			);
 			path = DoughNationAppBeta;
@@ -188,23 +200,26 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Damon Goodrich-Houska";
 				TargetAttributes = {
 					9A4221201F5F9C77004BA4BF = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = S8UHW68B6F;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 					9A4221341F5F9C77004BA4BF = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = S8UHW68B6F;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 9A4221201F5F9C77004BA4BF;
 					};
 					9A42213F1F5F9C77004BA4BF = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = S8UHW68B6F;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 9A4221201F5F9C77004BA4BF;
 					};
@@ -236,8 +251,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A42212F1F5F9C77004BA4BF /* LaunchScreen.storyboard in Resources */,
+				9ACABEC51F9AF53600A9EA70 /* IMG_2457.PNG in Resources */,
 				9A42212C1F5F9C77004BA4BF /* Assets.xcassets in Resources */,
 				9A42212A1F5F9C77004BA4BF /* Main.storyboard in Resources */,
+				9ACABEC91F9B135100A9EA70 /* shutterstock_305259533.jpg in Resources */,
+				9ACABEC71F9AFBEB00A9EA70 /* LogoInvertCAPSNoBorder.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +282,7 @@
 			files = (
 				9A4221271F5F9C77004BA4BF /* ViewController.swift in Sources */,
 				9A4221251F5F9C77004BA4BF /* AppDelegate.swift in Sources */,
+				9A4221531F5FA052004BA4BF /* ViewControllerqr.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,7 +347,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -336,7 +357,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -365,6 +390,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 			};
 			name = Debug;
 		};
@@ -378,7 +404,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -386,7 +414,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -407,6 +439,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -420,7 +453,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.doughnationgifts.DoughNationAppBeta;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -433,7 +467,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.doughnationgifts.DoughNationAppBeta;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -447,7 +482,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.doughnationgifts.DoughNationAppBetaTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DoughNationAppBeta.app/DoughNationAppBeta";
 			};
 			name = Debug;
@@ -462,7 +498,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.doughnationgifts.DoughNationAppBetaTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DoughNationAppBeta.app/DoughNationAppBeta";
 			};
 			name = Release;
@@ -476,7 +513,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.doughnationgifts.DoughNationAppBetaUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = DoughNationAppBeta;
 			};
 			name = Debug;
@@ -490,7 +528,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.doughnationgifts.DoughNationAppBetaUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = DoughNationAppBeta;
 			};
 			name = Release;
@@ -514,6 +553,7 @@
 				9A42214B1F5F9C77004BA4BF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9A42214C1F5F9C77004BA4BF /* Build configuration list for PBXNativeTarget "DoughNationAppBetaTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +562,7 @@
 				9A42214E1F5F9C77004BA4BF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9A42214F1F5F9C77004BA4BF /* Build configuration list for PBXNativeTarget "DoughNationAppBetaUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +571,7 @@
 				9A4221511F5F9C77004BA4BF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

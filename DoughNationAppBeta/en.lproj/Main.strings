@@ -1,0 +1,12 @@
+
+/* Class = "UITextField"; text = "SCAN"; ObjectID = "DTt-ha-3kf"; */
+"DTt-ha-3kf.text" = "SCAN";
+
+/* Class = "UITextField"; text = "SEARCH"; ObjectID = "gxI-Wp-W6t"; */
+"gxI-Wp-W6t.text" = "SEARCH";
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "vPd-AU-FHp"; */
+"vPd-AU-FHp.title" = "Back";
+
+/* Class = "UISearchBar"; text = "DoughNation Code"; ObjectID = "vqc-xY-tds"; */
+"vqc-xY-tds.text" = "DoughNation Code";
