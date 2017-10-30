@@ -14,74 +14,81 @@ class ViewControllerqr: UIViewController, AVCaptureMetadataOutputObjectsDelegate
     //ui image view insertion(possibly for square pic later)
     
     //ties image view for QR scan to viewcontroller
-    @IBOutlet weak var square: UIImageView!
+    @IBOutlet weak var square: UIView!
     
-    var video = AVCaptureVideoPreviewLayer()
+    var videoCaptureDevice: AVCaptureDevice = AVCaptureDevice.default(for: AVMediaType.video)!
+    var device = AVCaptureDevice.default(for: AVMediaType.video)
+    var output = AVCaptureMetadataOutput()
+    var previewLayer: AVCaptureVideoPreviewLayer?
     
+    var captureSession = AVCaptureSession()
+    var code: String?
     
-    
+    var scannedCode = UILabel()
     
     override func viewDidLoad()
     {
         
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        //creating session
-        let session = AVCaptureSession()
-        
-        //Define capture Device
-        let captureDevice = AVCaptureDevice.default(for: AVMediaType.video)
-        
-        do{
-            let input = try AVCaptureDeviceInput (device: captureDevice!)
-            session.addInput(input)
-        }
-            
-        catch{
-            print ("ERROR")
-        }
-        
-        let output = AVCaptureMetadataOutput()
-        session.addOutput(output)
-        
-        output.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
-        
-        output.metadataObjectTypes = [AVMetadataObject.ObjectType.qr]
-        
-        video = AVCaptureVideoPreviewLayer(session: session)
-        video.frame = view.layer.bounds
-        view.layer.addSublayer(video)
-        
-        self.view.bringSubview(toFront: square)
-        
-        session.startRunning()
-        
+        self.setupCamera()
     }
-    //takes info from video capture session
-    func metadataOutput(captureOutput: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
-        if metadataObjects != nil && metadataObjects.count != nil
-        {
-            //checks if video can read object
-            if let object = metadataObjects[0] as? AVMetadataMachineReadableCodeObject
-            {
-                //checks if object is valid QR Code
-                if object.type == AVMetadataObject.ObjectType.qr
-                {
-                    //checks if QR code is tied to valid URL
-                    let url = URL(string: object.stringValue!)!
-                    if #available(iOS 10.0, *)
-                    {
-                        //Auto open valid URL in default browser "Safari"
-                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
-                    } else {
-                        UIApplication.shared.openURL(url)
-                    }
-                    
-                }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if (captureSession.isRunning == false) {
+            captureSession.startRunning();
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        if (captureSession.isRunning == true) {
+            captureSession.stopRunning();
+        }
+    }
+    func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
+        // This is the delegate'smethod that is called when a code is readed
+       
+        print(metadataObjects)
+        for metadata in metadataObjects {
+            let readableObject = metadata as! AVMetadataMachineReadableCodeObject
+            let code = readableObject.stringValue
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(URL(string: code!)!, options: [:], completionHandler: nil)
+            } else {
+                UIApplication.shared.openURL(URL(string: code!)!)
             }
+        }
+    }
+    
+    private func setupCamera() {
+        
+        let input = try? AVCaptureDeviceInput(device: videoCaptureDevice)
+        
+        if self.captureSession.canAddInput(input!) {
+            self.captureSession.addInput(input!)
+        }
+        
+        self.previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
+        
+        if let videoPreviewLayer = self.previewLayer {
+            videoPreviewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
+            videoPreviewLayer.frame = self.view.bounds
+            view.layer.addSublayer(videoPreviewLayer)
+        }
+        
+        let metadataOutput = AVCaptureMetadataOutput()
+        if self.captureSession.canAddOutput(metadataOutput) {
+            self.captureSession.addOutput(metadataOutput)
             
+            metadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
+            metadataOutput.metadataObjectTypes = [AVMetadataObject.ObjectType.qr]
             
+        } else {
+            print("Could not add metadata output")
         }
     }
     

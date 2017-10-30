@@ -15,9 +15,6 @@
 		9A42213A1F5F9C77004BA4BF /* DoughNationAppBetaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4221391F5F9C77004BA4BF /* DoughNationAppBetaTests.swift */; };
 		9A4221451F5F9C77004BA4BF /* DoughNationAppBetaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4221441F5F9C77004BA4BF /* DoughNationAppBetaUITests.swift */; };
 		9A4221531F5FA052004BA4BF /* ViewControllerqr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4221521F5FA052004BA4BF /* ViewControllerqr.swift */; };
-		9ACABEC51F9AF53600A9EA70 /* IMG_2457.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 9ACABEC41F9AF53600A9EA70 /* IMG_2457.PNG */; };
-		9ACABEC71F9AFBEB00A9EA70 /* LogoInvertCAPSNoBorder.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9ACABEC61F9AFBEB00A9EA70 /* LogoInvertCAPSNoBorder.jpg */; };
-		9ACABEC91F9B135100A9EA70 /* shutterstock_305259533.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9ACABEC81F9B135100A9EA70 /* shutterstock_305259533.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,9 +49,6 @@
 		9A4221441F5F9C77004BA4BF /* DoughNationAppBetaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoughNationAppBetaUITests.swift; sourceTree = "<group>"; };
 		9A4221461F5F9C77004BA4BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A4221521F5FA052004BA4BF /* ViewControllerqr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerqr.swift; sourceTree = "<group>"; };
-		9ACABEC41F9AF53600A9EA70 /* IMG_2457.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = IMG_2457.PNG; path = ../../../Downloads/IMG_2457.PNG; sourceTree = "<group>"; };
-		9ACABEC61F9AFBEB00A9EA70 /* LogoInvertCAPSNoBorder.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = LogoInvertCAPSNoBorder.jpg; path = ../../../Downloads/LogoInvertCAPSNoBorder.jpg; sourceTree = "<group>"; };
-		9ACABEC81F9B135100A9EA70 /* shutterstock_305259533.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = shutterstock_305259533.jpg; path = ../../../Downloads/shutterstock_305259533.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,9 +105,6 @@
 				9A4221261F5F9C77004BA4BF /* ViewController.swift */,
 				9A4221521F5FA052004BA4BF /* ViewControllerqr.swift */,
 				9A42212B1F5F9C77004BA4BF /* Assets.xcassets */,
-				9ACABEC81F9B135100A9EA70 /* shutterstock_305259533.jpg */,
-				9ACABEC61F9AFBEB00A9EA70 /* LogoInvertCAPSNoBorder.jpg */,
-				9ACABEC41F9AF53600A9EA70 /* IMG_2457.PNG */,
 				9A4221301F5F9C77004BA4BF /* Info.plist */,
 			);
 			path = DoughNationAppBeta;
@@ -205,7 +196,7 @@
 				TargetAttributes = {
 					9A4221201F5F9C77004BA4BF = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = S8UHW68B6F;
+						DevelopmentTeam = J38X8FKVBJ;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
@@ -251,11 +242,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A42212F1F5F9C77004BA4BF /* LaunchScreen.storyboard in Resources */,
-				9ACABEC51F9AF53600A9EA70 /* IMG_2457.PNG in Resources */,
 				9A42212C1F5F9C77004BA4BF /* Assets.xcassets in Resources */,
 				9A42212A1F5F9C77004BA4BF /* Main.storyboard in Resources */,
-				9ACABEC91F9B135100A9EA70 /* shutterstock_305259533.jpg in Resources */,
-				9ACABEC71F9AFBEB00A9EA70 /* LogoInvertCAPSNoBorder.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,7 +436,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = S8UHW68B6F;
+				DEVELOPMENT_TEAM = J38X8FKVBJ;
 				INFOPLIST_FILE = DoughNationAppBeta/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.doughnationgifts.DoughNationAppBeta;
@@ -462,7 +450,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = S8UHW68B6F;
+				DEVELOPMENT_TEAM = J38X8FKVBJ;
 				INFOPLIST_FILE = DoughNationAppBeta/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.doughnationgifts.DoughNationAppBeta;

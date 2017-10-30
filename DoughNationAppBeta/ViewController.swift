@@ -8,41 +8,34 @@
 
 import UIKit
 
-class ViewController: UIViewController, UISearchBarDelegate {
+class ViewController: UIViewController {
 
     //connection that ties search bar in view to input for viewcontroller
    
-    @IBOutlet weak var searchbar: UISearchBar!
+    @IBOutlet weak var codeTextField: UITextField!
    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        searchbar.delegate = self
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
     }
-    //activates keyboard etc when searchbar clicked
-    func searchBarSearchButtonClicked(_ searchbar: UISearchBar) {
-        searchbar.resignFirstResponder()
-        //(doughnationcode) is string that will equal text as entered into search bar
-      
-        let doughnationcode = String()
-        
-        searchbar.text! = doughnationcode
-       
-        
-        guard let doughnationcode = searchbar.text else { return }
-        if let url = URL (string: "https://www.doughnationgifts.com/\(doughnationcode)")
-        {
-           
-            
-            //this section to check and auto open URL in default browser "Safari"
-        if #available(iOS 10.0, *)
-        {
-            
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
-        } else {
-            UIApplication.shared.openURL(url)
+    
+    @IBAction func searchPressed() {
+        if codeTextField.text?.count == 6 {
+            print("true")
+            let url = URL (string: "https://www.doughnationgifts.com/\(codeTextField.text!)")
+            if #available(iOS 10.0, *)
+            {
+                UIApplication.shared.open(url!, options: [:], completionHandler: nil)
+            } else {
+                UIApplication.shared.openURL(url!)
+            }
         }
     }
-}
+    
+    @objc func dismissKeyboard() {
+        codeTextField.resignFirstResponder()
+    }
 }
 
