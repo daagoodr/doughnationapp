@@ -120,7 +120,8 @@
                                 <items>
                                     <barButtonItem title="Back" id="vPd-AU-FHp">
                                         <connections>
-                                            <segue destination="BYZ-38-t0r" kind="show" id="nlO-cr-RxE"/>
+                                            <action selector="backSelected" destination="SMe-mf-SOT" id="SlI-HU-vRe"/>
+                                            <segue destination="BYZ-38-t0r" kind="show" id="47E-P4-Zuz"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>

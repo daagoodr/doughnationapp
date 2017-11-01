@@ -76,8 +76,10 @@ class ViewControllerqr: UIViewController, AVCaptureMetadataOutputObjectsDelegate
         
         if let videoPreviewLayer = self.previewLayer {
             videoPreviewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
-            videoPreviewLayer.frame = self.view.bounds
-            view.layer.addSublayer(videoPreviewLayer)
+            videoPreviewLayer.frame = square.bounds
+            //view.layer.addSublayer(videoPreviewLayer)
+            square.layer.addSublayer(videoPreviewLayer)
+            
         }
         
         let metadataOutput = AVCaptureMetadataOutput()
@@ -91,12 +93,11 @@ class ViewControllerqr: UIViewController, AVCaptureMetadataOutputObjectsDelegate
             print("Could not add metadata output")
         }
     }
-    
-    override  func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    /*
+    @IBAction func backSelected() {
+        self.dismiss(animated: true, completion: nil)
     }
-    
+    */
     
 }
 
