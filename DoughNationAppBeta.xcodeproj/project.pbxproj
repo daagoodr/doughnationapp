@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		121E83D702A1159C427D923E /* Pods_DoughNationAppBetaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3A0B47CAF8B56B11B97B81F /* Pods_DoughNationAppBetaTests.framework */; };
+		27FBFFA79EDC1143B1A292B5 /* Pods_DoughNationAppBetaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C391CA588B4A6CDCB69BB86 /* Pods_DoughNationAppBetaUITests.framework */; };
+		98D7EFA5DFD4210BE77F5552 /* Pods_DoughNationAppBeta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 275C633BF0DD5904A92F682A /* Pods_DoughNationAppBeta.framework */; };
 		9A4221251F5F9C77004BA4BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4221241F5F9C77004BA4BF /* AppDelegate.swift */; };
 		9A4221271F5F9C77004BA4BF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4221261F5F9C77004BA4BF /* ViewController.swift */; };
 		9A42212A1F5F9C77004BA4BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A4221281F5F9C77004BA4BF /* Main.storyboard */; };
@@ -35,6 +38,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C6D348B2B6F31B4FE136D90 /* Pods-DoughNationAppBetaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoughNationAppBetaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DoughNationAppBetaTests/Pods-DoughNationAppBetaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		13B2A57FCD5CD294F319B9FB /* Pods-DoughNationAppBeta.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoughNationAppBeta.release.xcconfig"; path = "Pods/Target Support Files/Pods-DoughNationAppBeta/Pods-DoughNationAppBeta.release.xcconfig"; sourceTree = "<group>"; };
+		1F535EDD4FF0FEA9F70C2173 /* Pods-DoughNationAppBetaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoughNationAppBetaUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DoughNationAppBetaUITests/Pods-DoughNationAppBetaUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		275C633BF0DD5904A92F682A /* Pods_DoughNationAppBeta.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DoughNationAppBeta.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		39460DCADB4100866533DFC5 /* Pods-DoughNationAppBeta.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoughNationAppBeta.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DoughNationAppBeta/Pods-DoughNationAppBeta.debug.xcconfig"; sourceTree = "<group>"; };
+		8594A76D5ED6F88385D7BDFB /* Pods-DoughNationAppBetaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoughNationAppBetaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DoughNationAppBetaTests/Pods-DoughNationAppBetaTests.release.xcconfig"; sourceTree = "<group>"; };
+		8C391CA588B4A6CDCB69BB86 /* Pods_DoughNationAppBetaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DoughNationAppBetaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A4221211F5F9C77004BA4BF /* DoughNationAppBeta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoughNationAppBeta.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A4221241F5F9C77004BA4BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A4221261F5F9C77004BA4BF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +59,8 @@
 		9A4221441F5F9C77004BA4BF /* DoughNationAppBetaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoughNationAppBetaUITests.swift; sourceTree = "<group>"; };
 		9A4221461F5F9C77004BA4BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A4221521F5FA052004BA4BF /* ViewControllerqr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerqr.swift; sourceTree = "<group>"; };
+		C3A0B47CAF8B56B11B97B81F /* Pods_DoughNationAppBetaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DoughNationAppBetaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBD524FA7C79830E029930F7 /* Pods-DoughNationAppBetaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoughNationAppBetaUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DoughNationAppBetaUITests/Pods-DoughNationAppBetaUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98D7EFA5DFD4210BE77F5552 /* Pods_DoughNationAppBeta.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				121E83D702A1159C427D923E /* Pods_DoughNationAppBetaTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +84,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27FBFFA79EDC1143B1A292B5 /* Pods_DoughNationAppBetaUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		493A54DC37CFA055C0E104DE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				275C633BF0DD5904A92F682A /* Pods_DoughNationAppBeta.framework */,
+				C3A0B47CAF8B56B11B97B81F /* Pods_DoughNationAppBetaTests.framework */,
+				8C391CA588B4A6CDCB69BB86 /* Pods_DoughNationAppBetaUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9177AAF4F16E49E053B2E160 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				39460DCADB4100866533DFC5 /* Pods-DoughNationAppBeta.debug.xcconfig */,
+				13B2A57FCD5CD294F319B9FB /* Pods-DoughNationAppBeta.release.xcconfig */,
+				0C6D348B2B6F31B4FE136D90 /* Pods-DoughNationAppBetaTests.debug.xcconfig */,
+				8594A76D5ED6F88385D7BDFB /* Pods-DoughNationAppBetaTests.release.xcconfig */,
+				1F535EDD4FF0FEA9F70C2173 /* Pods-DoughNationAppBetaUITests.debug.xcconfig */,
+				DBD524FA7C79830E029930F7 /* Pods-DoughNationAppBetaUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		9A4221181F5F9C77004BA4BF = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +121,8 @@
 				9A4221381F5F9C77004BA4BF /* DoughNationAppBetaTests */,
 				9A4221431F5F9C77004BA4BF /* DoughNationAppBetaUITests */,
 				9A4221221F5F9C77004BA4BF /* Products */,
+				9177AAF4F16E49E053B2E160 /* Pods */,
+				493A54DC37CFA055C0E104DE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -135,9 +175,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9A4221491F5F9C77004BA4BF /* Build configuration list for PBXNativeTarget "DoughNationAppBeta" */;
 			buildPhases = (
+				2855EF69D34D40BCC1E37AE7 /* [CP] Check Pods Manifest.lock */,
 				9A42211D1F5F9C77004BA4BF /* Sources */,
 				9A42211E1F5F9C77004BA4BF /* Frameworks */,
 				9A42211F1F5F9C77004BA4BF /* Resources */,
+				0CB449B371E81EDA766B9783 /* [CP] Embed Pods Frameworks */,
+				384E3D64B388EF6579B1F0C9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -152,9 +195,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9A42214C1F5F9C77004BA4BF /* Build configuration list for PBXNativeTarget "DoughNationAppBetaTests" */;
 			buildPhases = (
+				2A2AA10781A2588159555C16 /* [CP] Check Pods Manifest.lock */,
 				9A4221311F5F9C77004BA4BF /* Sources */,
 				9A4221321F5F9C77004BA4BF /* Frameworks */,
 				9A4221331F5F9C77004BA4BF /* Resources */,
+				706607ECAA0921D61599DEB5 /* [CP] Embed Pods Frameworks */,
+				F9E3CE0C199C32F7CDCB99C7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -170,9 +216,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9A42214F1F5F9C77004BA4BF /* Build configuration list for PBXNativeTarget "DoughNationAppBetaUITests" */;
 			buildPhases = (
+				1416603955717E02E63179F7 /* [CP] Check Pods Manifest.lock */,
 				9A42213C1F5F9C77004BA4BF /* Sources */,
 				9A42213D1F5F9C77004BA4BF /* Frameworks */,
 				9A42213E1F5F9C77004BA4BF /* Resources */,
+				641B33072B8F00815865875D /* [CP] Embed Pods Frameworks */,
+				89714A567FD2068EC863208F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -262,6 +311,144 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0CB449B371E81EDA766B9783 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DoughNationAppBeta/Pods-DoughNationAppBeta-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1416603955717E02E63179F7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		2855EF69D34D40BCC1E37AE7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		2A2AA10781A2588159555C16 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		384E3D64B388EF6579B1F0C9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DoughNationAppBeta/Pods-DoughNationAppBeta-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		641B33072B8F00815865875D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DoughNationAppBetaUITests/Pods-DoughNationAppBetaUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		706607ECAA0921D61599DEB5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DoughNationAppBetaTests/Pods-DoughNationAppBetaTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		89714A567FD2068EC863208F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DoughNationAppBetaUITests/Pods-DoughNationAppBetaUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F9E3CE0C199C32F7CDCB99C7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DoughNationAppBetaTests/Pods-DoughNationAppBetaTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9A42211D1F5F9C77004BA4BF /* Sources */ = {
@@ -434,6 +621,7 @@
 		};
 		9A42214A1F5F9C77004BA4BF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 39460DCADB4100866533DFC5 /* Pods-DoughNationAppBeta.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = J38X8FKVBJ;
@@ -448,6 +636,7 @@
 		};
 		9A42214B1F5F9C77004BA4BF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 13B2A57FCD5CD294F319B9FB /* Pods-DoughNationAppBeta.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = J38X8FKVBJ;
@@ -462,6 +651,7 @@
 		};
 		9A42214D1F5F9C77004BA4BF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C6D348B2B6F31B4FE136D90 /* Pods-DoughNationAppBetaTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -478,6 +668,7 @@
 		};
 		9A42214E1F5F9C77004BA4BF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8594A76D5ED6F88385D7BDFB /* Pods-DoughNationAppBetaTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -494,6 +685,7 @@
 		};
 		9A4221501F5F9C77004BA4BF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F535EDD4FF0FEA9F70C2173 /* Pods-DoughNationAppBetaUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = S8UHW68B6F;
@@ -509,6 +701,7 @@
 		};
 		9A4221511F5F9C77004BA4BF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DBD524FA7C79830E029930F7 /* Pods-DoughNationAppBetaUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = S8UHW68B6F;
