@@ -55,12 +55,26 @@ class ViewControllerqr: UIViewController, AVCaptureMetadataOutputObjectsDelegate
         print(metadataObjects)
         for metadata in metadataObjects {
             let readableObject = metadata as! AVMetadataMachineReadableCodeObject
-            let code = readableObject.stringValue
-            if #available(iOS 10.0, *) {
-                UIApplication.shared.open(URL(string: code!)!, options: [:], completionHandler: nil)
-            } else {
-                UIApplication.shared.openURL(URL(string: code!)!)
+            if let code = readableObject.stringValue {
+                var urlCode = URL(string: code)
+                if urlCode?.absoluteString.range(of: "http") == nil {
+                    urlCode = URL(string: "http://\(code)")
+                }
+                if urlCode != nil && UIApplication.shared.canOpenURL(urlCode!) {
+                        if #available(iOS 10.0, *) {
+                            UIApplication.shared.open(urlCode!, options: [:], completionHandler: nil)
+                        } else {
+                            UIApplication.shared.openURL(urlCode!)
+                        }
+                } else {
+                    let alertController = UIAlertController(title: "Error", message: "Invalid code, please try again", preferredStyle: .alert)
+                    let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                    alertController.addAction(okAction)
+                    self.present(alertController, animated: true, completion: nil)
+                }
             }
+
+
         }
     }
     
