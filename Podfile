@@ -7,6 +7,8 @@ target 'DoughNationAppBeta' do
 
   # Pods for DoughNationAppBeta
 	pod 'IQKeyboardManagerSwift'
+	pod 'Alamofire', '~> 4.5'
+	pod 'WePay'
   target 'DoughNationAppBetaTests' do
     inherit! :search_paths
     # Pods for testing

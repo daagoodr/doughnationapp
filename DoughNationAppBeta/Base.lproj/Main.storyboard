@@ -1,14 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="pOJ-7T-0cZ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--View Controller-->
+        <scene sceneID="aQe-dk-HGr">
+            <objects>
+                <viewController id="MbU-Fl-5Ij" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dcq-lH-16t"/>
+                        <viewControllerLayoutGuide type="bottom" id="vfh-kr-1kl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fsH-px-Zby">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ICg-fB-oof" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137" y="-590"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -83,6 +104,16 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cAF-eg-QXj">
+                                <rect key="frame" x="164" y="440" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="wFm-vK-mVz" kind="show" id="R8u-dm-0PT"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0078431372549019607" green="0.66274509803921566" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -150,9 +181,352 @@
             </objects>
             <point key="canvasLocation" x="828" y="143.47826086956522"/>
         </scene>
+        <!--Tipper ScreenVC-->
+        <scene sceneID="YJK-Yb-UAm">
+            <objects>
+                <viewController id="pOJ-7T-0cZ" customClass="TipperScreenVC" customModule="DoughNationAppBeta" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XSI-yE-4A7"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZxI-UL-HCX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ywf-IL-2K5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Le Grande Resort | Valet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dAz-wO-T83">
+                                <rect key="frame" x="16" y="72" width="186" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lukas Taylor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BhQ-mA-OrD">
+                                <rect key="frame" x="16" y="101" width="210" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oee-UK-7YN">
+                                <rect key="frame" x="134" y="598" width="225" height="49"/>
+                                <color key="backgroundColor" red="1" green="0.64968532986111116" blue="0.16587999131944445" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="225" id="QxI-7R-0CZ"/>
+                                    <constraint firstAttribute="height" constant="49" id="Veq-aq-hkh"/>
+                                </constraints>
+                                <state key="normal" title="TIP LUKAS">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tipSelected" destination="pOJ-7T-0cZ" eventType="touchUpInside" id="QrH-Ju-Gft"/>
+                                    <segue destination="sxw-CJ-xER" kind="show" id="TVC-nz-rnb"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="s5v-MP-XAi">
+                                <rect key="frame" x="0.0" y="216" width="375" height="350"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qTJ-Hb-U2Q">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="350"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="RPH-Xd-O7Y">
+                                                <rect key="frame" x="-20" y="25" width="300" height="300"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="300" id="CAy-5W-AnR"/>
+                                                    <constraint firstAttribute="height" constant="300" id="aFU-jp-Gdu"/>
+                                                </constraints>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y42-XI-hoQ" customClass="PaymentAmountButton" customModule="DoughNationAppBeta" customModuleProvider="target">
+                                                <rect key="frame" x="235" y="-5" width="60" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="60" id="024-89-Dei"/>
+                                                    <constraint firstAttribute="height" constant="60" id="Xsp-EE-4CQ"/>
+                                                </constraints>
+                                                <state key="normal" title="$2">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="twoDollarButtonPressedWithSender:" destination="pOJ-7T-0cZ" eventType="touchUpInside" id="bcQ-Cp-Zk4"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5tF-cF-Ekw" customClass="PaymentAmountButton" customModule="DoughNationAppBeta" customModuleProvider="target">
+                                                <rect key="frame" x="275" y="70" width="60" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="60" id="gxx-i8-axn"/>
+                                                    <constraint firstAttribute="height" constant="60" id="m8N-v2-ye5"/>
+                                                </constraints>
+                                                <state key="normal" title="$5">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="fiveDollarButtonPressedWithSender:" destination="pOJ-7T-0cZ" eventType="touchUpInside" id="h5Y-aa-9GU"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bCj-WJ-otP" customClass="PaymentAmountButton" customModule="DoughNationAppBeta" customModuleProvider="target">
+                                                <rect key="frame" x="285" y="144.5" width="60" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="Akz-El-aGy"/>
+                                                    <constraint firstAttribute="width" constant="60" id="vXY-mg-41B"/>
+                                                </constraints>
+                                                <state key="normal" title="$10">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="tenDollarButtonPressedWithSender:" destination="pOJ-7T-0cZ" eventType="touchUpInside" id="v7c-RZ-i59"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mKO-1U-zSx" customClass="PaymentAmountButton" customModule="DoughNationAppBeta" customModuleProvider="target">
+                                                <rect key="frame" x="235" y="295" width="60" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="60" id="bHW-3b-gXz"/>
+                                                    <constraint firstAttribute="height" constant="60" id="nOC-Rh-cRk"/>
+                                                </constraints>
+                                                <state key="normal" title="Custom">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s6C-3T-fSB" customClass="PaymentAmountButton" customModule="DoughNationAppBeta" customModuleProvider="target">
+                                                <rect key="frame" x="275" y="220" width="60" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="60" id="OTh-2j-YmO"/>
+                                                    <constraint firstAttribute="height" constant="60" id="a3V-tS-raR"/>
+                                                </constraints>
+                                                <state key="normal" title="$20">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="twentyDollarButtonPressedWithSender:" destination="pOJ-7T-0cZ" eventType="touchUpInside" id="Thn-FX-w3H"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="mKO-1U-zSx" firstAttribute="bottom" secondItem="RPH-Xd-O7Y" secondAttribute="bottom" constant="30" id="4Dz-bR-xrk"/>
+                                            <constraint firstItem="bCj-WJ-otP" firstAttribute="centerY" secondItem="RPH-Xd-O7Y" secondAttribute="centerY" id="A5n-64-Cs7"/>
+                                            <constraint firstItem="s6C-3T-fSB" firstAttribute="trailing" secondItem="RPH-Xd-O7Y" secondAttribute="trailing" constant="55" id="FCg-0t-fkA"/>
+                                            <constraint firstItem="mKO-1U-zSx" firstAttribute="trailing" secondItem="RPH-Xd-O7Y" secondAttribute="trailing" constant="15" id="Q1d-ie-ryi"/>
+                                            <constraint firstItem="y42-XI-hoQ" firstAttribute="trailing" secondItem="RPH-Xd-O7Y" secondAttribute="trailing" constant="15" id="QLO-VA-87z"/>
+                                            <constraint firstItem="RPH-Xd-O7Y" firstAttribute="leading" secondItem="qTJ-Hb-U2Q" secondAttribute="leading" constant="-20" id="R0s-nG-j0v"/>
+                                            <constraint firstItem="mKO-1U-zSx" firstAttribute="top" secondItem="s6C-3T-fSB" secondAttribute="bottom" constant="15" id="Z9i-zy-Zhs"/>
+                                            <constraint firstItem="5tF-cF-Ekw" firstAttribute="top" secondItem="y42-XI-hoQ" secondAttribute="bottom" constant="15" id="bWd-gT-qLc"/>
+                                            <constraint firstItem="RPH-Xd-O7Y" firstAttribute="centerY" secondItem="qTJ-Hb-U2Q" secondAttribute="centerY" id="hYv-8r-RGz"/>
+                                            <constraint firstItem="bCj-WJ-otP" firstAttribute="trailing" secondItem="RPH-Xd-O7Y" secondAttribute="trailing" constant="65" id="lQJ-gE-vDa"/>
+                                            <constraint firstItem="y42-XI-hoQ" firstAttribute="top" secondItem="RPH-Xd-O7Y" secondAttribute="top" constant="-30" id="myg-Db-GRA"/>
+                                            <constraint firstItem="5tF-cF-Ekw" firstAttribute="trailing" secondItem="RPH-Xd-O7Y" secondAttribute="trailing" constant="55" id="r0Q-F5-xUU"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="qTJ-Hb-U2Q" firstAttribute="top" secondItem="s5v-MP-XAi" secondAttribute="top" id="CSb-nT-e6w"/>
+                                    <constraint firstAttribute="bottom" secondItem="qTJ-Hb-U2Q" secondAttribute="bottom" id="DGg-Ip-5Qs"/>
+                                    <constraint firstAttribute="trailing" secondItem="qTJ-Hb-U2Q" secondAttribute="trailing" id="VDg-hc-PRb"/>
+                                    <constraint firstAttribute="width" secondItem="s5v-MP-XAi" secondAttribute="height" multiplier="15:14" id="XCJ-Ol-b5N"/>
+                                    <constraint firstItem="qTJ-Hb-U2Q" firstAttribute="leading" secondItem="s5v-MP-XAi" secondAttribute="leading" id="YfI-ka-13C"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.64313725489999995" blue="0.87450980389999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="s5v-MP-XAi" firstAttribute="leading" secondItem="ywf-IL-2K5" secondAttribute="leading" id="VkG-6e-Xz5"/>
+                            <constraint firstItem="ZxI-UL-HCX" firstAttribute="top" secondItem="Oee-UK-7YN" secondAttribute="bottom" constant="20" id="hWe-Nc-d5X"/>
+                            <constraint firstItem="Oee-UK-7YN" firstAttribute="top" secondItem="s5v-MP-XAi" secondAttribute="bottom" constant="32" id="hfW-v6-PvT"/>
+                            <constraint firstItem="Oee-UK-7YN" firstAttribute="trailing" secondItem="ywf-IL-2K5" secondAttribute="trailingMargin" id="pYz-3a-mdO"/>
+                            <constraint firstAttribute="trailing" secondItem="s5v-MP-XAi" secondAttribute="trailing" id="zh2-tq-TGd"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="H7o-XW-cOa"/>
+                    <connections>
+                        <outlet property="customDollarButton" destination="mKO-1U-zSx" id="8zk-iq-sIe"/>
+                        <outlet property="fiveDollarButton" destination="5tF-cF-Ekw" id="C6R-HB-swJ"/>
+                        <outlet property="profilePicture" destination="RPH-Xd-O7Y" id="qcD-QQ-tyI"/>
+                        <outlet property="tenDollarButton" destination="bCj-WJ-otP" id="F2y-Oz-jZi"/>
+                        <outlet property="tipButton" destination="Oee-UK-7YN" id="1zn-s1-sHS"/>
+                        <outlet property="twentyDollarButton" destination="s6C-3T-fSB" id="cIN-a6-qzX"/>
+                        <outlet property="twoDollarButton" destination="y42-XI-hoQ" id="xDP-Lm-bEf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dvF-0p-TCR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2228" y="130.88455772113943"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="LnV-CB-Opg">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wFm-vK-mVz" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="XWy-n8-6n0">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="pOJ-7T-0cZ" kind="relationship" relationship="rootViewController" id="rg0-1T-3YD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GB3-iy-B1W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1547.2" y="131.33433283358323"/>
+        </scene>
+        <!--Tipper ScreenVC-->
+        <scene sceneID="J3j-ma-YhT">
+            <objects>
+                <viewController id="sxw-CJ-xER" customClass="TipperScreenVC" customModule="DoughNationAppBeta" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nV8-p6-Rc7"/>
+                        <viewControllerLayoutGuide type="bottom" id="JIJ-By-JQ5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nAW-Pj-l6V">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lukas Taylor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GlC-vf-BjP">
+                                <rect key="frame" x="84.5" y="20" width="205" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="GlC-vf-BjP" secondAttribute="height" multiplier="105:22" id="f9E-IK-681"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xE5-Lr-3XS">
+                                <rect key="frame" x="16" y="587" width="343" height="60"/>
+                                <color key="backgroundColor" red="1" green="0.64968532990000005" blue="0.1658799913" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="xho-kW-qF9"/>
+                                </constraints>
+                                <state key="normal" title="TIP LUKAS">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tipSelected" destination="sxw-CJ-xER" eventType="touchUpInside" id="yj0-CS-29G"/>
+                                    <segue destination="pOJ-7T-0cZ" kind="show" id="Esd-ul-uvl"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="AQs-Av-PAd">
+                                <rect key="frame" x="16" y="109" width="343" height="343"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="AQs-Av-PAd" secondAttribute="height" multiplier="1:1" id="n5s-Pt-ALM"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Le Grande Resort | Valet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XIA-nd-qYw">
+                                <rect key="frame" x="16" y="72" width="343" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="RAD-m5-oIl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Rkr-ff-w5B">
+                                <rect key="frame" x="16" y="460" width="343" height="61.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fqj-Wc-7PG" customClass="PaymentAmountButton" customModule="DoughNationAppBeta" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="62.5" height="61.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Fqj-Wc-7PG" secondAttribute="height" multiplier="1:1" constant="1" id="TLa-iX-b7z"/>
+                                        </constraints>
+                                        <state key="normal" title="$2">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="twoDollarButtonPressedWithSender:" destination="sxw-CJ-xER" eventType="touchUpInside" id="sSx-to-QdC"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NtK-9X-Hsg" customClass="PaymentAmountButton" customModule="DoughNationAppBeta" customModuleProvider="target">
+                                        <rect key="frame" x="70.5" y="0.0" width="62" height="61.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="NtK-9X-Hsg" secondAttribute="height" multiplier="1:1" constant="1" id="GWG-kT-oK5"/>
+                                        </constraints>
+                                        <state key="normal" title="$5">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="fiveDollarButtonPressedWithSender:" destination="sxw-CJ-xER" eventType="touchUpInside" id="kap-dB-wKb"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vUm-IX-fC6" customClass="PaymentAmountButton" customModule="DoughNationAppBeta" customModuleProvider="target">
+                                        <rect key="frame" x="140.5" y="0.0" width="63" height="61.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="vUm-IX-fC6" secondAttribute="height" multiplier="1:1" constant="1" id="YDa-Qf-Jgb"/>
+                                        </constraints>
+                                        <state key="normal" title="$10">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="tenDollarButtonPressedWithSender:" destination="sxw-CJ-xER" eventType="touchUpInside" id="fRt-1T-Tmz"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dvp-vS-Xh2" customClass="PaymentAmountButton" customModule="DoughNationAppBeta" customModuleProvider="target">
+                                        <rect key="frame" x="211.5" y="0.0" width="62" height="61.5"/>
+                                        <state key="normal" title="$20">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="twentyDollarButtonPressedWithSender:" destination="sxw-CJ-xER" eventType="touchUpInside" id="ftO-n2-9Ks"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cCo-bQ-se2" customClass="PaymentAmountButton" customModule="DoughNationAppBeta" customModuleProvider="target">
+                                        <rect key="frame" x="281.5" y="0.0" width="61.5" height="61.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="cCo-bQ-se2" secondAttribute="height" multiplier="1:1" id="hff-qD-urA"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <state key="normal" title="Custom">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="cCo-bQ-se2" firstAttribute="height" secondItem="Fqj-Wc-7PG" secondAttribute="height" id="7Hc-bv-LZJ"/>
+                                    <constraint firstItem="dvp-vS-Xh2" firstAttribute="width" secondItem="Fqj-Wc-7PG" secondAttribute="width" id="LlE-AL-NT2"/>
+                                    <constraint firstItem="dvp-vS-Xh2" firstAttribute="height" secondItem="Fqj-Wc-7PG" secondAttribute="height" id="MN2-8j-j98"/>
+                                    <constraint firstItem="NtK-9X-Hsg" firstAttribute="width" secondItem="Fqj-Wc-7PG" secondAttribute="width" id="Rxp-7h-6BH"/>
+                                    <constraint firstItem="vUm-IX-fC6" firstAttribute="height" secondItem="Fqj-Wc-7PG" secondAttribute="height" id="fdO-1H-mNg"/>
+                                    <constraint firstItem="NtK-9X-Hsg" firstAttribute="height" secondItem="Fqj-Wc-7PG" secondAttribute="height" id="puQ-YH-631"/>
+                                    <constraint firstItem="vUm-IX-fC6" firstAttribute="width" secondItem="Fqj-Wc-7PG" secondAttribute="width" id="rg5-Yr-LHV"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.64313725489999995" blue="0.87450980389999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="XIA-nd-qYw" firstAttribute="top" secondItem="GlC-vf-BjP" secondAttribute="bottom" constant="9" id="6z4-JO-CbC"/>
+                            <constraint firstItem="Rkr-ff-w5B" firstAttribute="leading" secondItem="nAW-Pj-l6V" secondAttribute="leadingMargin" id="BYs-Wf-WdR"/>
+                            <constraint firstItem="XIA-nd-qYw" firstAttribute="trailing" secondItem="nAW-Pj-l6V" secondAttribute="trailingMargin" id="Ba4-61-ghw"/>
+                            <constraint firstItem="GlC-vf-BjP" firstAttribute="centerX" secondItem="nAW-Pj-l6V" secondAttribute="centerX" id="IRN-QF-W1F"/>
+                            <constraint firstItem="xE5-Lr-3XS" firstAttribute="leading" secondItem="nAW-Pj-l6V" secondAttribute="leadingMargin" id="YR7-XX-aCV"/>
+                            <constraint firstItem="xE5-Lr-3XS" firstAttribute="trailing" secondItem="nAW-Pj-l6V" secondAttribute="trailingMargin" id="Zd0-ur-yyb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Rkr-ff-w5B" secondAttribute="trailing" id="hBX-T1-oy1"/>
+                            <constraint firstItem="XIA-nd-qYw" firstAttribute="leading" secondItem="nAW-Pj-l6V" secondAttribute="leadingMargin" id="jHY-1z-uAm"/>
+                            <constraint firstItem="Rkr-ff-w5B" firstAttribute="top" secondItem="AQs-Av-PAd" secondAttribute="bottom" constant="8" id="oGU-Dg-nqx"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="AQs-Av-PAd" secondAttribute="trailing" constant="16" id="qwj-Oz-2bC"/>
+                            <constraint firstItem="GlC-vf-BjP" firstAttribute="top" secondItem="nV8-p6-Rc7" secondAttribute="bottom" id="uOO-Cu-sTG"/>
+                            <constraint firstItem="AQs-Av-PAd" firstAttribute="top" secondItem="XIA-nd-qYw" secondAttribute="bottom" constant="16" id="vFV-Yi-Tca"/>
+                            <constraint firstItem="JIJ-By-JQ5" firstAttribute="top" secondItem="xE5-Lr-3XS" secondAttribute="bottom" constant="20" id="vNu-mt-TC1"/>
+                            <constraint firstItem="AQs-Av-PAd" firstAttribute="centerX" secondItem="nAW-Pj-l6V" secondAttribute="centerX" id="zXm-DH-NVl"/>
+                            <constraint firstItem="AQs-Av-PAd" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="nAW-Pj-l6V" secondAttribute="leading" constant="16" id="zzm-DA-t1C"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="mHc-SC-H1H"/>
+                    <connections>
+                        <outlet property="customDollarButton" destination="cCo-bQ-se2" id="fdc-8B-2w2"/>
+                        <outlet property="fiveDollarButton" destination="NtK-9X-Hsg" id="Lxp-PI-xHB"/>
+                        <outlet property="profilePicture" destination="AQs-Av-PAd" id="5Wy-Nt-EQf"/>
+                        <outlet property="tenDollarButton" destination="vUm-IX-fC6" id="EQi-av-ITx"/>
+                        <outlet property="tipButton" destination="xE5-Lr-3XS" id="d4g-7l-jAw"/>
+                        <outlet property="twentyDollarButton" destination="dvp-vS-Xh2" id="W81-LA-QcJ"/>
+                        <outlet property="twoDollarButton" destination="Fqj-Wc-7PG" id="GhW-y6-Kyb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TKg-Af-y41" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3001" y="131"/>
+        </scene>
     </scenes>
     <resources>
         <image name="IMG_2457.PNG" width="2257" height="2257"/>
+        <image name="image.jpg" width="3000" height="1688"/>
         <image name="shutterstock_305259533.jpg" width="3550" height="1850"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="47E-P4-Zuz"/>
+        <segue reference="Esd-ul-uvl"/>
+    </inferredMetricsTieBreakers>
 </document>
