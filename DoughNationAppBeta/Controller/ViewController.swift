@@ -7,13 +7,13 @@
 //
 
 import UIKit
+import Alamofire
 
 class ViewController: UIViewController {
 
     //connection that ties search bar in view to input for viewcontroller
    
     @IBOutlet weak var codeTextField: UITextField!
-   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +32,11 @@ class ViewController: UIViewController {
                 UIApplication.shared.openURL(url!)
             }
         }
+    }
+    
+    @IBAction func cardInfo() {
+
+
     }
     
     @objc func dismissKeyboard() {

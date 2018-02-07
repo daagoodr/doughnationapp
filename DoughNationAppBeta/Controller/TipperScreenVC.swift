@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class TipperScreenVC: UIViewController, WPTokenizationDelegate {
 
@@ -16,30 +17,49 @@ class TipperScreenVC: UIViewController, WPTokenizationDelegate {
     @IBOutlet weak var twentyDollarButton: PaymentAmountButton!
     @IBOutlet weak var customDollarButton: PaymentAmountButton!
     
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var jobLabel: UILabel!
     @IBOutlet weak var tipButton: UIButton!
     @IBOutlet weak var profilePicture: UIImageView!
     
-    var wePay = WePay()
+    var recipName: String?
+    var recipJob: String?
+    var recipID: Int?
+    var recipAccessToken: String?
+    
     var selectedPaymentAmount = 0
     var lastPressedButton = PaymentAmountButton()
     
+    var currentUser: CurrentUser?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Initialize WePay config with your clientId and environment
-        let clientId: String = "\(CLIENT_ID)"
-        let environment: String = kWPEnvironmentStage
-        let accountId = ACCOUNT_ID
-        let config: WPConfig = WPConfig(clientId: clientId, environment: environment)
         
-        // Initialize WePay
-        self.wePay = WePay(config: config)
+        if let currentUser = Singleton.main.loggedInUser {
+            self.currentUser = currentUser
+        } else {
+            //Show an error here
+        }
+        
         setupUI()
         // Do any additional setup after loading the view.
     }
     
+    
     func setupUI() {
         profilePicture.layer.cornerRadius = profilePicture.bounds.size.width / 2
         tipButton.layer.cornerRadius = tipButton.bounds.size.width / 10
+        if let name = recipName {
+            nameLabel.text = name
+            if name.components(separatedBy: " ")[1] != nil {
+                tipButton.setTitle("Tip \(name.components(separatedBy: " ")[0])", for: .normal)
+            } else {
+                tipButton.setTitle("Tip \(name)", for: .normal)
+            }
+        }
+        if let job = recipJob {
+            jobLabel.text = job
+        }
     }
     
     @IBAction func twoDollarButtonPressed(sender: UIButton) {
@@ -67,26 +87,40 @@ class TipperScreenVC: UIViewController, WPTokenizationDelegate {
     }
     
     @IBAction func tipSelected() {
-        print(selectedPaymentAmount)
-        let paymentInfo: WPPaymentInfo = WPPaymentInfo(
-            firstName: "WPiOS",
-            lastName: "Example",
-            email: "wp.ios.example@wepay.com",
-            billingAddress: WPAddress(zip: "94306"),
-            shippingAddress: nil,
-            cardNumber: "5496198584584769",
-            cvv: "123",
-            expMonth: "04",
-            expYear: "2020",
-            virtualTerminal: true
-        )
-        self.wePay.tokenizePaymentInfo(paymentInfo, tokenizationDelegate: self)
+        
+        let parameters: Parameters = [  "account_id": recipID,
+                                        "amount": selectedPaymentAmount,
+                                        "type": "donation",
+                                        "currency": "USD",
+                                        "short_description": "test payment",
+                                        "payment_method": [
+                                            "type": "credit_card",
+                                            "credit_card": [
+                                                "id": Singleton.main.loggedInUser?.creditCardID!
+                                            ]
+            ]
+        ]
+        
+        Alamofire.request("https://stage.wepayapi.com/v2/checkout/create", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: ["Authorization":"Bearer \(self.recipAccessToken!)"]).responseString(completionHandler: { (response) in
+            print(response.error)
+            print("Request: \(String(describing: response.request))")   // original url request
+            print("Response: \(String(describing: response.response))") // http url response
+            print("Result: \(response.result)")
+            if let json = response.result.value {
+                print("JSON: \(json)") // serialized json response
+            }
+        })
+        
+        
+        
+        
     }
     
     func paymentInfo(_ paymentInfo: WPPaymentInfo!, didTokenize paymentToken: WPPaymentToken!) {
         // Send the tokenId (paymentToken.tokenId) to your server
         // Your server can use the tokenId to make a /checkout/create call to complete the transaction
         print("Transaction went through")
+
     }
 
     func paymentInfo(_ paymentInfo: WPPaymentInfo!, didFailTokenization error: Error!) {

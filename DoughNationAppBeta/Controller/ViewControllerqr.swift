@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import Alamofire
 
 class ViewControllerqr: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     
@@ -25,6 +26,10 @@ class ViewControllerqr: UIViewController, AVCaptureMetadataOutputObjectsDelegate
     var code: String?
     
     var scannedCode = UILabel()
+    var recipName: String?
+    var recipJob: String?
+    var recipID: Int?
+    var recipAccessToken: String?
     
     override func viewDidLoad()
     {
@@ -55,17 +60,31 @@ class ViewControllerqr: UIViewController, AVCaptureMetadataOutputObjectsDelegate
         print(metadataObjects)
         for metadata in metadataObjects {
             let readableObject = metadata as! AVMetadataMachineReadableCodeObject
-            if let code = readableObject.stringValue {
-                var urlCode = URL(string: code)
-                if urlCode?.absoluteString.range(of: "http") == nil {
-                    urlCode = URL(string: "http://\(code)")
-                }
-                if urlCode != nil && UIApplication.shared.canOpenURL(urlCode!) {
-                        if #available(iOS 10.0, *) {
-                            UIApplication.shared.open(urlCode!, options: [:], completionHandler: nil)
-                        } else {
-                            UIApplication.shared.openURL(urlCode!)
+            if let components = readableObject.stringValue?.components(separatedBy: ",") {
+                if components[1] != nil {
+                    Alamofire.request("http://54.68.88.28/doughnation/api/user/type/id/query/\(components[1])", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: ["Authorization": "Bearer 0d03njk30sjyc863yualz04899duhyvbahf109384udpmaqal1"]).responseString(completionHandler: { (response) in
+                        
+                        do {
+                            if let data = response.data,
+                                let json = try JSONSerialization.jsonObject(with: data) as? [String: Any],
+                                let info = json["data"] as? [String: Any] {
+                                print("JSON: \(json)")
+                                if !(info["wepay_access_token"] is NSNull) {
+                                    self.recipAccessToken = info["wepay_access_token"] as! String
+                                    self.recipName = "\(info["firstname"] as! String) \(info["lastname"] as! String)"
+                                    self.recipJob = "\(info["occupation"] as! String), \(info["company"] as! String)"
+                                    self.recipID = Int(info["wepay_account_id"] as! String)
+                                    self.performSegue(withIdentifier: "showTipScreen", sender: self)
+                                }
+                                
+                            }
+                        } catch {
+                            print("Error deserializing JSON: \(error)")
                         }
+                    })
+                    
+                }
+                
                 } else {
                     let alertController = UIAlertController(title: "Error", message: "Invalid code, please try again", preferredStyle: .alert)
                     let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
@@ -73,9 +92,6 @@ class ViewControllerqr: UIViewController, AVCaptureMetadataOutputObjectsDelegate
                     self.present(alertController, animated: true, completion: nil)
                 }
             }
-
-
-        }
     }
     
     private func setupCamera() {
@@ -112,6 +128,18 @@ class ViewControllerqr: UIViewController, AVCaptureMetadataOutputObjectsDelegate
         self.dismiss(animated: true, completion: nil)
     }
     */
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showTipScreen" {
+            let vc = segue.destination as! TipperScreenVC
+            vc.recipName = recipName!
+            vc.recipJob = recipJob!
+            vc.recipID = recipID!
+            if let accessToken = recipAccessToken {
+                vc.recipAccessToken = accessToken
+            }
+        }
+    }
     
 }
 
