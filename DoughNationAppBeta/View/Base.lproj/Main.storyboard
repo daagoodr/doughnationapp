@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -96,7 +95,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0078431372550000003" green="0.66274509800000003" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Nuw-JW-HII" firstAttribute="leading" secondItem="6EE-gU-pme" secondAttribute="leading" id="1kc-EF-5HK"/>
                             <constraint firstItem="I4P-Qi-81y" firstAttribute="leading" secondItem="JAk-8C-U2D" secondAttribute="leading" id="8SE-uC-fmj"/>
@@ -186,7 +185,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0078431372549019607" green="0.66274509800000003" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="tmw-iv-gzB" id="Kbx-RI-cWu"/>
@@ -290,6 +289,7 @@
                                 </state>
                                 <connections>
                                     <action selector="cardInfo" destination="BYZ-38-t0r" eventType="touchUpInside" id="cXL-NI-jJ7"/>
+                                    <segue destination="MbU-Fl-5Ij" kind="show" id="ujk-bm-owd"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -714,7 +714,8 @@
         <image name="image.jpg" width="3000" height="1688"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Bha-F1-HK8"/>
+        <segue reference="Esd-ul-uvl"/>
         <segue reference="usG-SC-rgU"/>
+        <segue reference="fwj-UT-IAh"/>
     </inferredMetricsTieBreakers>
 </document>

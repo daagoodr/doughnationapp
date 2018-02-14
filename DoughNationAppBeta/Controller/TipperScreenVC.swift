@@ -8,8 +8,9 @@
 
 import UIKit
 import Alamofire
+import PassKit
 
-class TipperScreenVC: UIViewController, WPTokenizationDelegate {
+class TipperScreenVC: UIViewController {
 
     @IBOutlet weak var twoDollarButton: PaymentAmountButton!
     @IBOutlet weak var fiveDollarButton: PaymentAmountButton!
@@ -26,6 +27,9 @@ class TipperScreenVC: UIViewController, WPTokenizationDelegate {
     var recipJob: String?
     var recipID: Int?
     var recipAccessToken: String?
+    
+    let supportedPaymentNetworks = [PKPaymentNetwork.visa, PKPaymentNetwork.masterCard, PKPaymentNetwork.amex]
+    let applePayMerchantID = "merchant.com.doughnationgifts.doughnationtips"
     
     var selectedPaymentAmount = 0
     var lastPressedButton = PaymentAmountButton()
@@ -88,6 +92,12 @@ class TipperScreenVC: UIViewController, WPTokenizationDelegate {
     
     @IBAction func tipSelected() {
         
+        if PKPaymentAuthorizationViewController.canMakePayments(usingNetworks: supportedPaymentNetworks) {
+            payWithApplePay()
+        } else {
+            print("Can't use Apple Pay")
+        }
+        /*
         let parameters: Parameters = [  "account_id": recipID,
                                         "amount": selectedPaymentAmount,
                                         "type": "donation",
@@ -96,12 +106,12 @@ class TipperScreenVC: UIViewController, WPTokenizationDelegate {
                                         "payment_method": [
                                             "type": "credit_card",
                                             "credit_card": [
-                                                "id": Singleton.main.loggedInUser?.creditCardID!
+                                                "id": (Singleton.main.loggedInUser?.creditCardID)!
                                             ]
             ]
         ]
         
-        Alamofire.request("https://stage.wepayapi.com/v2/checkout/create", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: ["Authorization":"Bearer \(self.recipAccessToken!)"]).responseString(completionHandler: { (response) in
+        Alamofire.request("https://stage.wepayapi.com/v2/checkout/create", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: ["Authorization":"Bearer STAGE_90cf114f6292c80093d6feb7c91e82f3f146203392f24cd823d9e1c47677a896"]).responseString(completionHandler: { (response) in
             print(response.error)
             print("Request: \(String(describing: response.request))")   // original url request
             print("Response: \(String(describing: response.response))") // http url response
@@ -110,21 +120,44 @@ class TipperScreenVC: UIViewController, WPTokenizationDelegate {
                 print("JSON: \(json)") // serialized json response
             }
         })
-        
-        
-        
-        
+ */
     }
     
-    func paymentInfo(_ paymentInfo: WPPaymentInfo!, didTokenize paymentToken: WPPaymentToken!) {
-        // Send the tokenId (paymentToken.tokenId) to your server
-        // Your server can use the tokenId to make a /checkout/create call to complete the transaction
-        print("Transaction went through")
+    func payWithApplePay() {
+        if PKPaymentAuthorizationViewController.canMakePayments(usingNetworks: supportedPaymentNetworks) {
+            let request = PKPaymentRequest()
+            request.merchantIdentifier = applePayMerchantID
+            request.supportedNetworks = supportedPaymentNetworks
+            request.merchantCapabilities = PKMerchantCapability.capability3DS
+            request.countryCode = "US"
+            request.currencyCode = "USD"
+            
+            if let name = recipName {
+                if name.components(separatedBy: " ")[1] != nil {
+                    request.paymentSummaryItems = [PKPaymentSummaryItem(label: "\(name.components(separatedBy: " ")[0])", amount: NSDecimalNumber(value: selectedPaymentAmount))]
+                } else {
+                    request.paymentSummaryItems = [PKPaymentSummaryItem(label: "\(name)", amount: NSDecimalNumber(value: selectedPaymentAmount))]
+                }
+            }
+            
+            
+            let applePayController = PKPaymentAuthorizationViewController(paymentRequest: request)
+            applePayController?.delegate = self
+            self.present(applePayController!, animated: true, completion: nil)
+        } else {
+            print("Can't use Apple Pay")
+        }
 
     }
+}
 
-    func paymentInfo(_ paymentInfo: WPPaymentInfo!, didFailTokenization error: Error!) {
-        print(error.localizedDescription)
+extension TipperScreenVC: PKPaymentAuthorizationViewControllerDelegate {
+    
+    func paymentAuthorizationViewController(_ controller: PKPaymentAuthorizationViewController, didAuthorizePayment payment: PKPayment, handler completion: @escaping (PKPaymentAuthorizationResult) -> Void) {
+        completion(PKPaymentAuthorizationResult(status: .success, errors: nil))
     }
     
+    func paymentAuthorizationViewControllerDidFinish(_ controller: PKPaymentAuthorizationViewController) {
+        controller.dismiss(animated: true, completion: nil)
+    }
 }

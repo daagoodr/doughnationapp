@@ -78,6 +78,7 @@
 		A35966422009323400AB5058 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		A35B82A0202A590200C39CA0 /* CCInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCInfoVC.swift; sourceTree = "<group>"; };
 		A35B82A2202A594900C39CA0 /* Singleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
+		A35B82A4202D0E3300C39CA0 /* DoughNationAppBeta.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DoughNationAppBeta.entitlements; sourceTree = "<group>"; };
 		C3A0B47CAF8B56B11B97B81F /* Pods_DoughNationAppBetaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DoughNationAppBetaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBD524FA7C79830E029930F7 /* Pods-DoughNationAppBetaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoughNationAppBetaUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DoughNationAppBetaUITests/Pods-DoughNationAppBetaUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -158,6 +159,7 @@
 		9A4221231F5F9C77004BA4BF /* DoughNationAppBeta */ = {
 			isa = PBXGroup;
 			children = (
+				A35B82A4202D0E3300C39CA0 /* DoughNationAppBeta.entitlements */,
 				A35B829F202A57DE00C39CA0 /* Controller */,
 				A35B829E202A57D700C39CA0 /* View */,
 				A35B829D202A57D200C39CA0 /* Model */,
@@ -301,6 +303,11 @@
 						DevelopmentTeam = J38X8FKVBJ;
 						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplePay = {
+								enabled = 1;
+							};
+						};
 					};
 					9A4221341F5F9C77004BA4BF = {
 						CreatedOnToolsVersion = 8.3.3;
@@ -687,8 +694,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = DoughNationAppBeta/DoughNationAppBeta.entitlements;
 				DEVELOPMENT_TEAM = J38X8FKVBJ;
 				INFOPLIST_FILE = DoughNationAppBeta/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.doughnationgifts.DoughNationAppBeta;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -705,8 +714,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = DoughNationAppBeta/DoughNationAppBeta.entitlements;
 				DEVELOPMENT_TEAM = J38X8FKVBJ;
 				INFOPLIST_FILE = DoughNationAppBeta/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.doughnationgifts.DoughNationAppBeta;
 				PRODUCT_NAME = "$(TARGET_NAME)";

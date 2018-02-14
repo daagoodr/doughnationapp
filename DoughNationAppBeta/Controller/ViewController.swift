@@ -21,6 +21,10 @@ class ViewController: UIViewController {
         view.addGestureRecognizer(tap)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        print("CC ID: \(Singleton.main.loggedInUser?.creditCardID)")
+    }
+    
     @IBAction func searchPressed() {
         if codeTextField.text?.count == 6 {
             print("true")
