@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import PassKit
 
-class TipperScreenVC: UIViewController {
+class TipperScreenVC: UIViewController, TipperScreenDelegate {
 
     @IBOutlet weak var twoDollarButton: PaymentAmountButton!
     @IBOutlet weak var fiveDollarButton: PaymentAmountButton!
@@ -32,7 +32,7 @@ class TipperScreenVC: UIViewController {
     let applePayMerchantID = "merchant.com.doughnationgifts.doughnationtips"
     
     var selectedPaymentAmount = 0
-    var lastPressedButton = PaymentAmountButton()
+    var lastPressedButton: PaymentAmountButton?
     
     var currentUser: CurrentUser?
     
@@ -49,6 +49,9 @@ class TipperScreenVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        print(selectedPaymentAmount)
+    }
     
     func setupUI() {
         profilePicture.layer.cornerRadius = profilePicture.bounds.size.width / 2
@@ -68,36 +71,49 @@ class TipperScreenVC: UIViewController {
     
     @IBAction func twoDollarButtonPressed(sender: UIButton) {
         selectedPaymentAmount = 2
-        lastPressedButton.isSelected = false
+        lastPressedButton?.isSelected = false
         lastPressedButton = twoDollarButton
     }
     
     @IBAction func fiveDollarButtonPressed(sender: UIButton) {
         selectedPaymentAmount = 5
-        lastPressedButton.isSelected = false
+        lastPressedButton?.isSelected = false
         lastPressedButton = fiveDollarButton
     }
     
     @IBAction func tenDollarButtonPressed(sender: UIButton) {
         selectedPaymentAmount = 10
-        lastPressedButton.isSelected = false
+        lastPressedButton?.isSelected = false
         lastPressedButton = tenDollarButton
     }
     
     @IBAction func twentyDollarButtonPressed(sender: UIButton) {
         selectedPaymentAmount = 20
-        lastPressedButton.isSelected = false
+        lastPressedButton?.isSelected = false
         lastPressedButton = twentyDollarButton
+    }
+    
+    @IBAction func customAmountButtonPressed() {
+        lastPressedButton?.isSelected = false
+        lastPressedButton = customDollarButton
+        self.performSegue(withIdentifier: "showCustomTip", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showCustomTip" {
+            let vc = segue.destination as? CustomTipVC
+            vc?.delegate = self
+        }
     }
     
     @IBAction func tipSelected() {
         
-        if PKPaymentAuthorizationViewController.canMakePayments(usingNetworks: supportedPaymentNetworks) {
-            payWithApplePay()
-        } else {
-            print("Can't use Apple Pay")
-        }
-        /*
+//        if PKPaymentAuthorizationViewController.canMakePayments(usingNetworks: supportedPaymentNetworks) {
+//            payWithApplePay()
+//        } else {
+//            print("Can't use Apple Pay")
+//        }
+        
         let parameters: Parameters = [  "account_id": recipID,
                                         "amount": selectedPaymentAmount,
                                         "type": "donation",
@@ -120,7 +136,7 @@ class TipperScreenVC: UIViewController {
                 print("JSON: \(json)") // serialized json response
             }
         })
- */
+ 
     }
     
     func payWithApplePay() {
@@ -149,6 +165,15 @@ class TipperScreenVC: UIViewController {
         }
 
     }
+    
+    func changeSelectedPaymentAmount(amount: Int) {
+        self.selectedPaymentAmount = amount
+    }
+    
+}
+
+protocol TipperScreenDelegate {
+    func changeSelectedPaymentAmount(amount: Int)
 }
 
 extension TipperScreenVC: PKPaymentAuthorizationViewControllerDelegate {

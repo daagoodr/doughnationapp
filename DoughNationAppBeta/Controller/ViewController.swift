@@ -15,6 +15,11 @@ class ViewController: UIViewController {
    
     @IBOutlet weak var codeTextField: UITextField!
     
+    var recipName: String?
+    var recipJob: String?
+    var recipID: Int?
+    var recipAccessToken: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
@@ -26,16 +31,28 @@ class ViewController: UIViewController {
     }
     
     @IBAction func searchPressed() {
-        if codeTextField.text?.count == 6 {
-            print("true")
-            let url = URL (string: "https://www.doughnationgifts.com/\(codeTextField.text!)")
-            if #available(iOS 10.0, *)
-            {
-                UIApplication.shared.open(url!, options: [:], completionHandler: nil)
-            } else {
-                UIApplication.shared.openURL(url!)
+        //Not sure how to handle codes currently, can be changed
+        Alamofire.request("http://54.68.88.28/doughnation/api/user/type/id/query/10", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: ["Authorization": "Bearer 0d03njk30sjyc863yualz04899duhyvbahf109384udpmaqal1"]).responseString(completionHandler: { (response) in
+            
+            do {
+                if let data = response.data,
+                    let json = try JSONSerialization.jsonObject(with: data) as? [String: Any],
+                    let info = json["data"] as? [String: Any] {
+                    print("JSON: \(json)")
+                    if !(info["wepay_access_token"] is NSNull) {
+                        self.recipAccessToken = info["wepay_access_token"] as! String
+                        self.recipName = "\(info["firstname"] as! String) \(info["lastname"] as! String)"
+                        self.recipJob = "\(info["occupation"] as! String), \(info["company"] as! String)"
+                        self.recipID = Int(info["wepay_account_id"] as! String)
+                        self.performSegue(withIdentifier: "showTipScreen", sender: self)
+                    }
+                    
+                }
+            } catch {
+                print("Error deserializing JSON: \(error)")
             }
-        }
+        })
+ 
     }
     
     @IBAction func cardInfo() {
@@ -45,6 +62,18 @@ class ViewController: UIViewController {
     
     @objc func dismissKeyboard() {
         codeTextField.resignFirstResponder()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showTipScreen" {
+            let vc = segue.destination as! TipperScreenVC
+            vc.recipName = recipName!
+            vc.recipJob = recipJob!
+            vc.recipID = recipID!
+            if let accessToken = recipAccessToken {
+                vc.recipAccessToken = accessToken
+            }
+        }
     }
 }
 

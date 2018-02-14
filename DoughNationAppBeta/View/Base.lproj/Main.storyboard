@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="8nF-bx-HJd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -89,7 +89,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mQ3-t4-Fmj">
                                 <rect key="frame" x="156" y="386" width="65" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Add Card"/>
+                                <state key="normal" title="Add Card">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="addCardSelected" destination="MbU-Fl-5Ij" eventType="touchUpInside" id="qhf-5x-leK"/>
                                 </connections>
@@ -179,7 +181,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lxj-vP-QS3">
                                 <rect key="frame" x="159" y="209" width="57" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Register"/>
+                                <state key="normal" title="Register">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="registerSelected" destination="8nF-bx-HJd" eventType="touchUpInside" id="nrI-TT-40f"/>
                                 </connections>
@@ -259,6 +263,7 @@
                                 </state>
                                 <connections>
                                     <action selector="searchPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="CmF-Wu-2TR"/>
+                                    <segue destination="wFm-vK-mVz" kind="show" id="jPs-fk-KqI"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Insert code here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fq4-5U-nMQ">
@@ -268,16 +273,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cAF-eg-QXj">
-                                <rect key="frame" x="164" y="440" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="wFm-vK-mVz" kind="show" id="R8u-dm-0PT"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KT4-ta-ESg">
                                 <rect key="frame" x="16" y="20" width="46" height="46"/>
                                 <constraints>
@@ -303,6 +298,7 @@
                     </view>
                     <connections>
                         <outlet property="codeTextField" destination="fq4-5U-nMQ" id="RjE-Ib-Nw0"/>
+                        <segue destination="pOJ-7T-0cZ" kind="show" identifier="showTipScreen" id="8QT-co-MQh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -356,7 +352,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yLT-6y-AWE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="828" y="143.47826086956522"/>
+            <point key="canvasLocation" x="847" y="143"/>
         </scene>
         <!--Tipper ScreenVC-->
         <scene sceneID="YJK-Yb-UAm">
@@ -455,6 +451,9 @@
                                                 <state key="normal" title="Custom">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="customAmountButtonPressed" destination="pOJ-7T-0cZ" eventType="touchUpInside" id="4bF-Zr-ZoT"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s6C-3T-fSB" customClass="PaymentAmountButton" customModule="DoughNationAppBeta" customModuleProvider="target">
                                                 <rect key="frame" x="275" y="220" width="60" height="60"/>
@@ -530,11 +529,74 @@
                         <outlet property="tipButton" destination="Oee-UK-7YN" id="1zn-s1-sHS"/>
                         <outlet property="twentyDollarButton" destination="s6C-3T-fSB" id="cIN-a6-qzX"/>
                         <outlet property="twoDollarButton" destination="y42-XI-hoQ" id="xDP-Lm-bEf"/>
+                        <segue destination="kaf-cV-XPk" kind="presentation" identifier="showCustomTip" id="IUh-rI-jRr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dvF-0p-TCR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2228" y="130.88455772113943"/>
+        </scene>
+        <!--Custom TipVC-->
+        <scene sceneID="DaT-dj-fnT">
+            <objects>
+                <viewController id="kaf-cV-XPk" customClass="CustomTipVC" customModule="DoughNationAppBeta" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="I1g-Qm-BBo"/>
+                        <viewControllerLayoutGuide type="bottom" id="NMz-fV-rlQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="B4d-hX-Tq0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="8Gr-P2-cw5">
+                                <rect key="frame" x="87" y="28" width="200" height="150"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="STT-1a-rkz">
+                                        <rect key="frame" x="0.0" y="0.0" width="95.5" height="150"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="69"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="mc1-eS-8l4">
+                                        <rect key="frame" x="95.5" y="33.5" width="104.5" height="83"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="69"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="36j-ua-bwC"/>
+                                    <constraint firstItem="STT-1a-rkz" firstAttribute="top" secondItem="8Gr-P2-cw5" secondAttribute="top" id="hJE-Oo-9w5"/>
+                                    <constraint firstAttribute="bottom" secondItem="STT-1a-rkz" secondAttribute="bottom" id="hgK-Zr-n3C"/>
+                                    <constraint firstAttribute="height" constant="150" id="pcH-ve-Kk6"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wdQ-wK-tIy">
+                                <rect key="frame" x="87" y="186" width="200" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <state key="normal" title="Confirm">
+                                    <color key="titleColor" red="0.0078431372550000003" green="0.66274509800000003" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="confirmSelected" destination="kaf-cV-XPk" eventType="touchUpInside" id="8uO-P2-05h"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0078431372550000003" green="0.66274509800000003" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="8Gr-P2-cw5" firstAttribute="centerX" secondItem="B4d-hX-Tq0" secondAttribute="centerX" id="8gQ-1a-VVV"/>
+                            <constraint firstItem="8Gr-P2-cw5" firstAttribute="top" secondItem="I1g-Qm-BBo" secondAttribute="bottom" constant="8" id="c9Y-GU-I9R"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="customAmountField" destination="mc1-eS-8l4" id="E31-K7-oSh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8dJ-Ch-osf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2228" y="821.73913043478262"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="LnV-CB-Opg">
@@ -714,8 +776,8 @@
         <image name="image.jpg" width="3000" height="1688"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Esd-ul-uvl"/>
+        <segue reference="8QT-co-MQh"/>
         <segue reference="usG-SC-rgU"/>
-        <segue reference="fwj-UT-IAh"/>
+        <segue reference="ujk-bm-owd"/>
     </inferredMetricsTieBreakers>
 </document>

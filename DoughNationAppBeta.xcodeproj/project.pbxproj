@@ -27,6 +27,7 @@
 		A35966432009323400AB5058 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35966422009323400AB5058 /* RegisterVC.swift */; };
 		A35B82A1202A590200C39CA0 /* CCInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35B82A0202A590200C39CA0 /* CCInfoVC.swift */; };
 		A35B82A3202A594900C39CA0 /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35B82A2202A594900C39CA0 /* Singleton.swift */; };
+		A37A725D20341EE200EDBB25 /* CustomTipVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37A725C20341EE200EDBB25 /* CustomTipVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		A35B82A0202A590200C39CA0 /* CCInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCInfoVC.swift; sourceTree = "<group>"; };
 		A35B82A2202A594900C39CA0 /* Singleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
 		A35B82A4202D0E3300C39CA0 /* DoughNationAppBeta.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DoughNationAppBeta.entitlements; sourceTree = "<group>"; };
+		A37A725C20341EE200EDBB25 /* CustomTipVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTipVC.swift; sourceTree = "<group>"; };
 		C3A0B47CAF8B56B11B97B81F /* Pods_DoughNationAppBetaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DoughNationAppBetaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBD524FA7C79830E029930F7 /* Pods-DoughNationAppBetaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoughNationAppBetaUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DoughNationAppBetaUITests/Pods-DoughNationAppBetaUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -219,6 +221,7 @@
 				9A4221261F5F9C77004BA4BF /* ViewController.swift */,
 				9A4221521F5FA052004BA4BF /* ViewControllerqr.swift */,
 				A340E44B1FFFE2E5005B9091 /* TipperScreenVC.swift */,
+				A37A725C20341EE200EDBB25 /* CustomTipVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -525,6 +528,7 @@
 				A35B82A3202A594900C39CA0 /* Singleton.swift in Sources */,
 				A35966432009323400AB5058 /* RegisterVC.swift in Sources */,
 				9A4221531F5FA052004BA4BF /* ViewControllerqr.swift in Sources */,
+				A37A725D20341EE200EDBB25 /* CustomTipVC.swift in Sources */,
 				A323208120211D1900E4A43A /* CurrentUser.swift in Sources */,
 				A340E4552000B8B4005B9091 /* Constants.swift in Sources */,
 			);

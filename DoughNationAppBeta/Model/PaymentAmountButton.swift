@@ -10,13 +10,7 @@ import UIKit
 
 class PaymentAmountButton: UIButton {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
+    let blueColor = UIColor(red: 2/255, green: 169/255, blue: 236/255, alpha: 1.0)
     
     override func awakeFromNib() {
         self.layer.cornerRadius = self.bounds.size.width / 2
@@ -28,8 +22,10 @@ class PaymentAmountButton: UIButton {
     @objc func onPress() {
         if self.backgroundColor != UIColor.white {
             self.backgroundColor = UIColor.white
+            self.setTitleColor(blueColor, for: .normal)
         } else {
             self.backgroundColor = UIColor.clear
+            self.setTitleColor(UIColor.white, for: .normal)
         }
     }
     
@@ -37,12 +33,12 @@ class PaymentAmountButton: UIButton {
         didSet {
             if self.backgroundColor != UIColor.white {
                 self.backgroundColor = UIColor.white
-            } else if self.backgroundColor == UIColor.white {
+                self.setTitleColor(blueColor, for: .normal)
+            } else {
                 self.backgroundColor = UIColor.clear
+                self.setTitleColor(UIColor.white, for: .normal)
             }
         }
-    
-        
     }
 
 }
