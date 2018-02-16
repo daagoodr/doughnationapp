@@ -38,13 +38,14 @@ class RegisterVC: UIViewController {
             
         } else {
             let email = emailTextField.text!
+            let password = passwordTextField.text!
             let parameters: Parameters = ["firstname":"Test3",
                                           "lastname":"Test3",
                                           "email":email,
                                           "address":"123 Main St.",
                                           "mobile":"5555555555",
                                           "birthday":"1/1/11",
-                                          "password":"Thisisapassword1!",
+                                          "password":password,
                                           "occupation":"developer",
                                           "company": "Adam's Company"]
             
