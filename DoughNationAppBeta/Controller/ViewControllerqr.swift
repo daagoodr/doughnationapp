@@ -62,7 +62,7 @@ class ViewControllerqr: UIViewController, AVCaptureMetadataOutputObjectsDelegate
             let readableObject = metadata as! AVMetadataMachineReadableCodeObject
             if let components = readableObject.stringValue?.components(separatedBy: ",") {
                 if components[1] != nil {
-                    Alamofire.request("http://54.68.88.28/doughnation/api/user/type/id/query/\(components[1])", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: ["Authorization": "Bearer 0d03njk30sjyc863yualz04899duhyvbahf109384udpmaqal1"]).responseString(completionHandler: { (response) in
+                    Alamofire.request("http://54.68.88.28/doughnation/api/user/type/id/query/\(components[1])", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: ["Authorization": AUTH_HEADER]).responseString(completionHandler: { (response) in
                         
                         do {
                             if let data = response.data,

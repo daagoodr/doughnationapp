@@ -127,7 +127,7 @@ class TipperScreenVC: UIViewController, TipperScreenDelegate {
             ]
         ]
         
-        Alamofire.request("https://stage.wepayapi.com/v2/checkout/create", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: ["Authorization":"Bearer STAGE_90cf114f6292c80093d6feb7c91e82f3f146203392f24cd823d9e1c47677a896"]).responseString(completionHandler: { (response) in
+        Alamofire.request("https://stage.wepayapi.com/v2/checkout/create", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: ["Authorization":AUTH_HEADER]).responseString(completionHandler: { (response) in
             print(response.error)
             print("Request: \(String(describing: response.request))")   // original url request
             print("Response: \(String(describing: response.response))") // http url response

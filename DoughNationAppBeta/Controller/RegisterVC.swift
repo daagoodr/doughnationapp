@@ -49,7 +49,7 @@ class RegisterVC: UIViewController {
                                           "occupation":"developer",
                                           "company": "Adam's Company"]
             
-            Alamofire.request("http://54.68.88.28/doughnation/api/register", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: ["Authorization": "Bearer 0d03njk30sjyc863yualz04899duhyvbahf109384udpmaqal1"]).responseString(completionHandler: { (response) in
+            Alamofire.request("https://www.doughnationgifts.com/api/register", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: ["Authorization": AUTH_HEADER]).responseString(completionHandler: { (response) in
                 print(response.error)
                 print("Request: \(String(describing: response.request))")   // original url request
                 print("Response: \(String(describing: response.response))") // http url response

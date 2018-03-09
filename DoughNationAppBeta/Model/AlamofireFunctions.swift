@@ -15,7 +15,7 @@ func createWePayCreditCard(forUser: CurrentUser, ccNumber: String, cvv: String, 
     let parameters: Parameters = ["email":email,
                                   "password":"Thisisapassword1!"]
     
-    Alamofire.request("https://www.doughnationgifts.com/api/user/type/id/query/44", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: ["Authorization": "Bearer 0d03njk30sjyc863yualz04899duhyvbahf109384udpmaqal1"]).responseString(completionHandler: { (response) in
+    Alamofire.request("https://www.doughnationgifts.com/api/user/type/id/query/44", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: ["Authorization": AUTH_HEADER]).responseString(completionHandler: { (response) in
         
         do {
             if let data = response.data,
@@ -35,7 +35,7 @@ func wePayUserLogin(email: String, password: String, completion: ((CurrentUser)-
     let parameters: Parameters = ["email":email,
                                   "password":password]
     
-    Alamofire.request("http://54.68.88.28/doughnation/api/login", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: ["Authorization": "Bearer 0d03njk30sjyc863yualz04899duhyvbahf109384udpmaqal1"]).responseString(completionHandler: { (response) in
+    Alamofire.request("https://www.doughnationgifts.com/api/login", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: ["Authorization": AUTH_HEADER]).responseString(completionHandler: { (response) in
         
         do {
             if let data = response.data,

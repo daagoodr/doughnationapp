@@ -55,7 +55,7 @@ class CCInfoVC: UIViewController {
             }
             
             //Needs Error Handling
-            Alamofire.request("https://stage.wepayapi.com/v2/credit_card/create", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: ["Authorization": "Bearer 0d03njk30sjyc863yualz04899duhyvbahf109384udpmaqal1"]).responseString(completionHandler: { (response) in
+            Alamofire.request("https://stage.wepayapi.com/v2/credit_card/create", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: ["Authorization": AUTH_HEADER]).responseString(completionHandler: { (response) in
                 print(response.error)
                 print("Request: \(String(describing: response.request))")   // original url request
                 print("Response: \(String(describing: response.response))") // http url response

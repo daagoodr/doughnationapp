@@ -32,7 +32,7 @@ class ViewController: UIViewController {
     
     @IBAction func searchPressed() {
         //Not sure how to handle codes currently, can be changed
-        Alamofire.request("http://54.68.88.28/doughnation/api/user/type/id/query/10", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: ["Authorization": "Bearer 0d03njk30sjyc863yualz04899duhyvbahf109384udpmaqal1"]).responseString(completionHandler: { (response) in
+        Alamofire.request("http://54.68.88.28/doughnation/api/user/type/id/query/10", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: ["Authorization": AUTH_HEADER]).responseString(completionHandler: { (response) in
             
             do {
                 if let data = response.data,
