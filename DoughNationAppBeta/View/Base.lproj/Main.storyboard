@@ -351,6 +351,7 @@
                         <outlet property="yearExpiryField" destination="dVw-qg-iXP" id="5eu-ks-uSr"/>
                         <segue destination="YZK-sF-DWA" kind="unwind" identifier="unwindToScanVC" unwindAction="unwindToScanVCWithSegue:" id="f4V-0Y-KgP"/>
                         <segue destination="YZK-sF-DWA" kind="unwind" identifier="unwindToRegisterVC" unwindAction="unwindToRegisterVCWithSegue:" id="NUV-ku-R6l"/>
+                        <segue destination="YZK-sF-DWA" kind="unwind" identifier="unwindToLoginVC" unwindAction="unwindToLoginVCWithSegue:" id="3iQ-ZS-3bg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ICg-fB-oof" userLabel="First Responder" sceneMemberID="firstResponder"/>
