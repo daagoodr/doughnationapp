@@ -11,6 +11,7 @@ import Foundation
 class CurrentUser: NSObject, NSCoding {
     
     var id: Int
+    var wePayID: Int
     var firstname: String
     var lastname: String
     var username: String
@@ -20,8 +21,9 @@ class CurrentUser: NSObject, NSCoding {
     
 
     
-     init(id: Int, firstname: String, lastname: String, username: String, email: String, token: String) {
+    init(id: Int, wePayID: Int, firstname: String, lastname: String, username: String, email: String, token: String) {
         self.id = id
+        self.wePayID = wePayID
         self.firstname = firstname
         self.lastname = lastname
         self.username = username
@@ -31,16 +33,18 @@ class CurrentUser: NSObject, NSCoding {
     
     required convenience init(coder aDecoder: NSCoder) {
         let id = aDecoder.decodeInteger(forKey: "id")
+        let wePayID = aDecoder.decodeInteger(forKey: "wePayID")
         let firstname = aDecoder.decodeObject(forKey: "firstname") as! String
         let lastname = aDecoder.decodeObject(forKey: "lastname") as! String
         let username = aDecoder.decodeObject(forKey: "username") as! String
         let email = aDecoder.decodeObject(forKey: "email") as! String
         let token = aDecoder.decodeObject(forKey: "token") as! String
-        self.init(id: id, firstname: firstname, lastname: lastname, username: username, email: email, token: token)
+        self.init(id: id, wePayID: wePayID, firstname: firstname, lastname: lastname, username: username, email: email, token: token)
     }
     
     func encode(with aCoder: NSCoder) {
         aCoder.encode(id, forKey: "id")
+        aCoder.encode(wePayID, forKey: "wePayID")
         aCoder.encode(firstname, forKey: "firstname")
         aCoder.encode(lastname, forKey: "lastname")
         aCoder.encode(username, forKey: "username")

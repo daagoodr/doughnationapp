@@ -20,7 +20,7 @@ class TipperScreenVC: UIViewController, TipperScreenDelegate {
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var jobLabel: UILabel!
-    @IBOutlet weak var tipButton: UIButton!
+    @IBOutlet weak var tipButton: GradientButton!
     @IBOutlet weak var profilePicture: UIImageView!
     
     var recipName: String?
@@ -46,7 +46,6 @@ class TipperScreenVC: UIViewController, TipperScreenDelegate {
         }
         
         setupUI()
-        // Do any additional setup after loading the view.
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -54,8 +53,12 @@ class TipperScreenVC: UIViewController, TipperScreenDelegate {
     }
     
     func setupUI() {
-        profilePicture.layer.cornerRadius = profilePicture.bounds.size.width / 2
-        tipButton.layer.cornerRadius = tipButton.bounds.size.width / 10
+        let bgImage = UIImageView(image: UIImage(named: "bg_base_main"))
+        self.view.insertSubview(bgImage, at: 0)
+        profilePicture.layer.cornerRadius = profilePicture.frame.height / 2
+        tipButton.layer.cornerRadius = tipButton.frame.height / 2
+        tipButton.clipsToBounds = true
+        
         if let name = recipName {
             nameLabel.text = name
             if name.components(separatedBy: " ")[1] != nil {
@@ -67,6 +70,7 @@ class TipperScreenVC: UIViewController, TipperScreenDelegate {
         if let job = recipJob {
             jobLabel.text = job
         }
+    
     }
     
     @IBAction func twoDollarButtonPressed(sender: UIButton) {
@@ -103,40 +107,51 @@ class TipperScreenVC: UIViewController, TipperScreenDelegate {
         if segue.identifier == "showCustomTip" {
             let vc = segue.destination as? CustomTipVC
             vc?.delegate = self
+            vc?.recipID = self.recipID
+            vc?.recipJob = self.recipJob
+            vc?.recipName = self.recipName
+        }
+        
+        if segue.identifier == "showCCInfo" {
+            let vc = segue.destination as? CCInfoVC
+            vc?.senderVC = "TipperScreenVC"
+            vc?.tipAmount = selectedPaymentAmount
+            vc?.recipID = self.recipID!
         }
     }
     
     @IBAction func tipSelected() {
         
-//        if PKPaymentAuthorizationViewController.canMakePayments(usingNetworks: supportedPaymentNetworks) {
-//            payWithApplePay()
-//        } else {
-//            print("Can't use Apple Pay")
-//        }
+        if selectedPaymentAmount == 0 {
+            self.showAlert(withMessage: "Please select a payment amount")
+            return
+        }
         
-        let parameters: Parameters = [  "account_id": recipID,
-                                        "amount": selectedPaymentAmount,
-                                        "type": "donation",
-                                        "currency": "USD",
-                                        "short_description": "test payment",
-                                        "payment_method": [
-                                            "type": "credit_card",
-                                            "credit_card": [
-                                                "id": (Singleton.main.loggedInUser?.creditCardID)!
-                                            ]
-            ]
-        ]
-        
-        Alamofire.request("https://stage.wepayapi.com/v2/checkout/create", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: ["Authorization":AUTH_HEADER]).responseString(completionHandler: { (response) in
-            print(response.error)
-            print("Request: \(String(describing: response.request))")   // original url request
-            print("Response: \(String(describing: response.response))") // http url response
-            print("Result: \(response.result)")
-            if let json = response.result.value {
-                print("JSON: \(json)") // serialized json response
+        let paymentAlertController = UIAlertController(title: "Please Select A Payment Method", message: "", preferredStyle: .alert)
+        let applePayAction = UIAlertAction(title: "Apple Pay", style: .default, handler: {(action) in
+            if PKPaymentAuthorizationViewController.canMakePayments(usingNetworks: self.supportedPaymentNetworks) {
+                self.payWithApplePay()
+            } else {
+                print("Can't use Apple Pay")
             }
         })
- 
+        
+        let ccAction = UIAlertAction(title: "Credit Card", style: .default, handler: { (action) in
+            if Singleton.main.loggedInUser?.creditCardID == nil || Singleton.main.loggedInUser == nil {
+                self.performSegue(withIdentifier: "showCCInfo", sender: self)
+            } else {
+                wePayCheckoutCreate(toAccount: self.recipID!, amount: self.selectedPaymentAmount, ccID: (Singleton.main.loggedInUser?.creditCardID)!, completion: {
+                    self.performSegue(withIdentifier: "unwindToScanVC", sender: self)
+                })
+            }
+        })
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        paymentAlertController.addAction(ccAction)
+        paymentAlertController.addAction(applePayAction)
+        paymentAlertController.addAction(cancelAction)
+        self.present(paymentAlertController, animated: true, completion: nil)
     }
     
     func payWithApplePay() {

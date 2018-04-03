@@ -6,9 +6,13 @@ target 'DoughNationAppBeta' do
   use_frameworks!
 
   # Pods for DoughNationAppBeta
-	pod 'IQKeyboardManagerSwift'
-	pod 'Alamofire', '~> 4.5'
+	pod 'Alamofire', '~> 4.7'
 	pod 'WePay'
+	pod 'HMSegmentedControl'
+	pod 'CBPinEntryView'
+	pod 'M13Checkbox'
+	pod 'IQKeyboardManager'
+	pod 'TextFieldEffects'
   target 'DoughNationAppBetaTests' do
     inherit! :search_paths
     # Pods for testing

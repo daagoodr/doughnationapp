@@ -3,3 +3,4 @@
 //
 
 #import <WePay/WePay.h>
+#import "TPKeyboardAvoiding/TPKeyboardAvoidingScrollView.h"

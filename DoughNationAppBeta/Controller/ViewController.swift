@@ -13,7 +13,6 @@ class ViewController: UIViewController {
 
     //connection that ties search bar in view to input for viewcontroller
    
-    @IBOutlet weak var codeTextField: UITextField!
     
     var recipName: String?
     var recipJob: String?
@@ -22,8 +21,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-        view.addGestureRecognizer(tap)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -32,7 +29,7 @@ class ViewController: UIViewController {
     
     @IBAction func searchPressed() {
         //Not sure how to handle codes currently, can be changed
-        Alamofire.request("http://54.68.88.28/doughnation/api/user/type/id/query/10", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: ["Authorization": AUTH_HEADER]).responseString(completionHandler: { (response) in
+        Alamofire.request("http://54.68.88.28/doughnation/api/user/type/id/query/10", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: ["Authorization": DN_HEADER]).responseString(completionHandler: { (response) in
             
             do {
                 if let data = response.data,
@@ -58,10 +55,6 @@ class ViewController: UIViewController {
     @IBAction func cardInfo() {
 
 
-    }
-    
-    @objc func dismissKeyboard() {
-        codeTextField.resignFirstResponder()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

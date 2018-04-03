@@ -17,18 +17,28 @@
 		9A42212F1F5F9C77004BA4BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A42212D1F5F9C77004BA4BF /* LaunchScreen.storyboard */; };
 		9A42213A1F5F9C77004BA4BF /* DoughNationAppBetaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4221391F5F9C77004BA4BF /* DoughNationAppBetaTests.swift */; };
 		9A4221451F5F9C77004BA4BF /* DoughNationAppBetaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4221441F5F9C77004BA4BF /* DoughNationAppBetaUITests.swift */; };
-		9A4221531F5FA052004BA4BF /* ViewControllerqr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4221521F5FA052004BA4BF /* ViewControllerqr.swift */; };
+		9A4221531F5FA052004BA4BF /* ScanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4221521F5FA052004BA4BF /* ScanVC.swift */; };
 		A323208120211D1900E4A43A /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A323208020211D1900E4A43A /* CurrentUser.swift */; };
 		A32320832021242600E4A43A /* AlamofireFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32320822021242600E4A43A /* AlamofireFunctions.swift */; };
 		A340E44C1FFFE2E5005B9091 /* TipperScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A340E44B1FFFE2E5005B9091 /* TipperScreenVC.swift */; };
 		A340E44E1FFFEA24005B9091 /* image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A340E44D1FFFEA24005B9091 /* image.jpg */; };
 		A340E453200024E0005B9091 /* PaymentAmountButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A340E452200024E0005B9091 /* PaymentAmountButton.swift */; };
 		A340E4552000B8B4005B9091 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A340E4542000B8B3005B9091 /* Constants.swift */; };
-		A35966432009323400AB5058 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35966422009323400AB5058 /* RegisterVC.swift */; };
+		A357D372206CAB3500F1BA1C /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A357D371206CAB3500F1BA1C /* TabBarController.swift */; };
+		A35966432009323400AB5058 /* LoginRegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35966422009323400AB5058 /* LoginRegisterVC.swift */; };
 		A35B82A1202A590200C39CA0 /* CCInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35B82A0202A590200C39CA0 /* CCInfoVC.swift */; };
 		A35B82A3202A594900C39CA0 /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35B82A2202A594900C39CA0 /* Singleton.swift */; };
+		A36148122055E2B700A596F7 /* BirthdayAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36148112055E2B700A596F7 /* BirthdayAlertView.swift */; };
+		A36148142055E3E300A596F7 /* BirthdayAlertViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36148132055E3E300A596F7 /* BirthdayAlertViewDelegate.swift */; };
+		A3614816205609C000A596F7 /* GradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3614815205609C000A596F7 /* GradientButton.swift */; };
 		A37A725D20341EE200EDBB25 /* CustomTipVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37A725C20341EE200EDBB25 /* CustomTipVC.swift */; };
 		A37A725F2036537800EDBB25 /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37A725E2036537800EDBB25 /* ViewControllerExtension.swift */; };
+		A3B0F0E620539B9300A2A3F8 /* CustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B0F0E520539B9300A2A3F8 /* CustomAlertView.swift */; };
+		A3B0F0EC20539F7900A2A3F8 /* CustomAlertViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B0F0EB20539F7900A2A3F8 /* CustomAlertViewDelegate.swift */; };
+		A3B0F0EE2053F92A00A2A3F8 /* TPKeyboardAvoiding in Resources */ = {isa = PBXBuildFile; fileRef = A3B0F0ED2053F92A00A2A3F8 /* TPKeyboardAvoiding */; };
+		A3F597212054842A00BF08BC /* UnderlinedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F597202054842A00BF08BC /* UnderlinedTextField.swift */; };
+		A3F6D35F20606301008653A9 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F6D35E20606301008653A9 /* SettingsVC.swift */; };
+		A3F6D3612060652C008653A9 /* InitialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F6D3602060652C008653A9 /* InitialVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,20 +79,30 @@
 		9A4221401F5F9C77004BA4BF /* DoughNationAppBetaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DoughNationAppBetaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A4221441F5F9C77004BA4BF /* DoughNationAppBetaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoughNationAppBetaUITests.swift; sourceTree = "<group>"; };
 		9A4221461F5F9C77004BA4BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9A4221521F5FA052004BA4BF /* ViewControllerqr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerqr.swift; sourceTree = "<group>"; };
+		9A4221521F5FA052004BA4BF /* ScanVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanVC.swift; sourceTree = "<group>"; };
+		A307E1F42055C9C70050BBDD /* DoughNationAppBeta-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DoughNationAppBeta-Bridging-Header.h"; sourceTree = "<group>"; };
 		A323208020211D1900E4A43A /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 		A32320822021242600E4A43A /* AlamofireFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireFunctions.swift; sourceTree = "<group>"; };
 		A340E44B1FFFE2E5005B9091 /* TipperScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipperScreenVC.swift; sourceTree = "<group>"; };
 		A340E44D1FFFEA24005B9091 /* image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image.jpg; sourceTree = "<group>"; };
-		A340E44F1FFFEDEC005B9091 /* DoughNationAppBeta-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DoughNationAppBeta-Bridging-Header.h"; sourceTree = "<group>"; };
 		A340E452200024E0005B9091 /* PaymentAmountButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentAmountButton.swift; sourceTree = "<group>"; };
 		A340E4542000B8B3005B9091 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		A35966422009323400AB5058 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
+		A357D371206CAB3500F1BA1C /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		A35966422009323400AB5058 /* LoginRegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRegisterVC.swift; sourceTree = "<group>"; };
 		A35B82A0202A590200C39CA0 /* CCInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCInfoVC.swift; sourceTree = "<group>"; };
 		A35B82A2202A594900C39CA0 /* Singleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
 		A35B82A4202D0E3300C39CA0 /* DoughNationAppBeta.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DoughNationAppBeta.entitlements; sourceTree = "<group>"; };
+		A36148112055E2B700A596F7 /* BirthdayAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayAlertView.swift; sourceTree = "<group>"; };
+		A36148132055E3E300A596F7 /* BirthdayAlertViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayAlertViewDelegate.swift; sourceTree = "<group>"; };
+		A3614815205609C000A596F7 /* GradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButton.swift; sourceTree = "<group>"; };
 		A37A725C20341EE200EDBB25 /* CustomTipVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTipVC.swift; sourceTree = "<group>"; };
 		A37A725E2036537800EDBB25 /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
+		A3B0F0E520539B9300A2A3F8 /* CustomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertView.swift; sourceTree = "<group>"; };
+		A3B0F0EB20539F7900A2A3F8 /* CustomAlertViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertViewDelegate.swift; sourceTree = "<group>"; };
+		A3B0F0ED2053F92A00A2A3F8 /* TPKeyboardAvoiding */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TPKeyboardAvoiding; sourceTree = "<group>"; };
+		A3F597202054842A00BF08BC /* UnderlinedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlinedTextField.swift; sourceTree = "<group>"; };
+		A3F6D35E20606301008653A9 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		A3F6D3602060652C008653A9 /* InitialVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialVC.swift; sourceTree = "<group>"; };
 		C3A0B47CAF8B56B11B97B81F /* Pods_DoughNationAppBetaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DoughNationAppBetaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBD524FA7C79830E029930F7 /* Pods-DoughNationAppBetaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoughNationAppBetaUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DoughNationAppBetaUITests/Pods-DoughNationAppBetaUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -171,7 +191,8 @@
 				9A42212B1F5F9C77004BA4BF /* Assets.xcassets */,
 				9A4221301F5F9C77004BA4BF /* Info.plist */,
 				A340E44D1FFFEA24005B9091 /* image.jpg */,
-				A340E44F1FFFEDEC005B9091 /* DoughNationAppBeta-Bridging-Header.h */,
+				A307E1F42055C9C70050BBDD /* DoughNationAppBeta-Bridging-Header.h */,
+				A3B0F0ED2053F92A00A2A3F8 /* TPKeyboardAvoiding */,
 			);
 			path = DoughNationAppBeta;
 			sourceTree = "<group>";
@@ -203,6 +224,12 @@
 				A323208020211D1900E4A43A /* CurrentUser.swift */,
 				A35B82A2202A594900C39CA0 /* Singleton.swift */,
 				A37A725E2036537800EDBB25 /* ViewControllerExtension.swift */,
+				A3B0F0E520539B9300A2A3F8 /* CustomAlertView.swift */,
+				A3B0F0EB20539F7900A2A3F8 /* CustomAlertViewDelegate.swift */,
+				A3F597202054842A00BF08BC /* UnderlinedTextField.swift */,
+				A36148112055E2B700A596F7 /* BirthdayAlertView.swift */,
+				A36148132055E3E300A596F7 /* BirthdayAlertViewDelegate.swift */,
+				A3614815205609C000A596F7 /* GradientButton.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -219,12 +246,15 @@
 		A35B829F202A57DE00C39CA0 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				A35966422009323400AB5058 /* RegisterVC.swift */,
+				A3F6D3602060652C008653A9 /* InitialVC.swift */,
+				A35966422009323400AB5058 /* LoginRegisterVC.swift */,
 				A35B82A0202A590200C39CA0 /* CCInfoVC.swift */,
 				9A4221261F5F9C77004BA4BF /* ViewController.swift */,
-				9A4221521F5FA052004BA4BF /* ViewControllerqr.swift */,
+				9A4221521F5FA052004BA4BF /* ScanVC.swift */,
 				A340E44B1FFFE2E5005B9091 /* TipperScreenVC.swift */,
 				A37A725C20341EE200EDBB25 /* CustomTipVC.swift */,
+				A3F6D35E20606301008653A9 /* SettingsVC.swift */,
+				A357D371206CAB3500F1BA1C /* TabBarController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -360,6 +390,7 @@
 				9A42212C1F5F9C77004BA4BF /* Assets.xcassets in Resources */,
 				9A42212A1F5F9C77004BA4BF /* Main.storyboard in Resources */,
 				A340E44E1FFFEA24005B9091 /* image.jpg in Resources */,
+				A3B0F0EE2053F92A00A2A3F8 /* TPKeyboardAvoiding in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,9 +417,22 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-DoughNationAppBeta/Pods-DoughNationAppBeta-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/CBPinEntryView/CBPinEntryView.framework",
+				"${BUILT_PRODUCTS_DIR}/HMSegmentedControl/HMSegmentedControl.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
+				"${BUILT_PRODUCTS_DIR}/M13Checkbox/M13Checkbox.framework",
+				"${BUILT_PRODUCTS_DIR}/TextFieldEffects/TextFieldEffects.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CBPinEntryView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HMSegmentedControl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/M13Checkbox.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TextFieldEffects.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -401,13 +445,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DoughNationAppBetaUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		2855EF69D34D40BCC1E37AE7 /* [CP] Check Pods Manifest.lock */ = {
@@ -416,13 +463,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DoughNationAppBeta-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		2A2AA10781A2588159555C16 /* [CP] Check Pods Manifest.lock */ = {
@@ -431,13 +481,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DoughNationAppBetaTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		384E3D64B388EF6579B1F0C9 /* [CP] Copy Pods Resources */ = {
@@ -522,19 +575,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3B0F0EC20539F7900A2A3F8 /* CustomAlertViewDelegate.swift in Sources */,
 				A37A725F2036537800EDBB25 /* ViewControllerExtension.swift in Sources */,
 				A340E44C1FFFE2E5005B9091 /* TipperScreenVC.swift in Sources */,
+				A36148142055E3E300A596F7 /* BirthdayAlertViewDelegate.swift in Sources */,
 				A340E453200024E0005B9091 /* PaymentAmountButton.swift in Sources */,
 				9A4221271F5F9C77004BA4BF /* ViewController.swift in Sources */,
 				A32320832021242600E4A43A /* AlamofireFunctions.swift in Sources */,
 				A35B82A1202A590200C39CA0 /* CCInfoVC.swift in Sources */,
+				A36148122055E2B700A596F7 /* BirthdayAlertView.swift in Sources */,
+				A3F6D35F20606301008653A9 /* SettingsVC.swift in Sources */,
+				A3F597212054842A00BF08BC /* UnderlinedTextField.swift in Sources */,
 				9A4221251F5F9C77004BA4BF /* AppDelegate.swift in Sources */,
 				A35B82A3202A594900C39CA0 /* Singleton.swift in Sources */,
-				A35966432009323400AB5058 /* RegisterVC.swift in Sources */,
-				9A4221531F5FA052004BA4BF /* ViewControllerqr.swift in Sources */,
+				A357D372206CAB3500F1BA1C /* TabBarController.swift in Sources */,
+				A3B0F0E620539B9300A2A3F8 /* CustomAlertView.swift in Sources */,
+				A35966432009323400AB5058 /* LoginRegisterVC.swift in Sources */,
+				9A4221531F5FA052004BA4BF /* ScanVC.swift in Sources */,
 				A37A725D20341EE200EDBB25 /* CustomTipVC.swift in Sources */,
 				A323208120211D1900E4A43A /* CurrentUser.swift in Sources */,
+				A3F6D3612060652C008653A9 /* InitialVC.swift in Sources */,
 				A340E4552000B8B4005B9091 /* Constants.swift in Sources */,
+				A3614816205609C000A596F7 /* GradientButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
