@@ -43,16 +43,7 @@ func wePayCreditCardCreate(name: String, email: String, cardInfo: CreditCardInfo
             do {
                 if let data = response.data, let json = try JSONSerialization.jsonObject(with: data) as? [String: Any] {
                     if let id = json["credit_card_id"]  as? Int {
-                        if let currentUser = Singleton.main.loggedInUser {
-                            currentUser.creditCardID = id
-                            print("ID: \(id)")
-                            let encodedUser = NSKeyedArchiver.archivedData(withRootObject: currentUser)
-                            UserDefaults.standard.set(encodedUser, forKey: "currentUser")
-                            UserDefaults.standard.synchronize()
-                            completion(id)
-                        } else {
-                            completion(id)
-                        }
+                        completion(id)
                     } else {
                         print("Card ID Error: \(json)")
                     }

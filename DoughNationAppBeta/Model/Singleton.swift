@@ -13,4 +13,6 @@ class Singleton {
     static var main = Singleton()
     
     var loggedInUser: CurrentUser?
+    
+    var guestCCID: Int?
 }

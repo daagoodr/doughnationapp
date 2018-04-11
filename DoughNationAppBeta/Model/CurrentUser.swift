@@ -52,5 +52,11 @@ class CurrentUser: NSObject, NSCoding {
         aCoder.encode(token, forKey: "token")
     }
     
+    func synchronize() {
+        let encodedUser = NSKeyedArchiver.archivedData(withRootObject: self)
+        UserDefaults.standard.set(encodedUser, forKey: "currentUser")
+        UserDefaults.standard.synchronize()
+    }
+    
  
 }
