@@ -80,7 +80,7 @@ func wePayCheckoutCreate(toAccount: Int, amount: Int, ccID: Int, completion: @es
                 if let checkoutID = json["checkout_id"] {
                     completion()
                 } else {
-                    print("Card ID Error: \(json)")
+                    print("Checkout Error: \(json)")
                 }
             }
         } catch {

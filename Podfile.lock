@@ -4,6 +4,7 @@ PODS:
   - HMSegmentedControl (1.5.4)
   - IQKeyboardManager (5.0.8)
   - M13Checkbox (3.2.2)
+  - Siren (3.2.3)
   - TextFieldEffects (1.4.0)
   - WePay (7.0.0)
 
@@ -13,6 +14,7 @@ DEPENDENCIES:
   - HMSegmentedControl
   - IQKeyboardManager
   - M13Checkbox
+  - Siren
   - TextFieldEffects
   - WePay
 
@@ -22,9 +24,10 @@ SPEC CHECKSUMS:
   HMSegmentedControl: b25bc4ec44766e073d62c473188fb354ee244b76
   IQKeyboardManager: 266cb7b1d11f94a3e71229d77f960f9a1b538e5b
   M13Checkbox: a8c2491cfbbca10797925fd0b9154a782bf40d89
+  Siren: aeb0151fcc47be5c9302b1e1c98816d8f77c95d9
   TextFieldEffects: 4ee41b5216e674d55fb6ac25107bf1af7629176f
   WePay: f1d9494a0f4d40a016f99dbcc61acc754e3b5708
 
-PODFILE CHECKSUM: 49aa2bbaa86af75b6f95ae7c086545dbfad4e18a
+PODFILE CHECKSUM: 218a17fa7c6e15b6111b11722971e483163df173
 
 COCOAPODS: 1.4.0

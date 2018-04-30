@@ -119,8 +119,8 @@ class LoginRegisterVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate,
     @IBAction func registerSelected() {
         let email = registerEmailField.text!
         let password = registerPasswordField.text!
-        let testParameters: Parameters = ["firstname":"Test",
-                                      "lastname":"Test",
+        let testParameters: Parameters = ["firstname":"Test429",
+                                      "lastname":"Test429",
                                       "email":email,
                                       "address":"111 Main St.",
                                       "mobile":"5555555555",
@@ -142,7 +142,7 @@ class LoginRegisterVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate,
         
         //"https://www.doughnationgifts.com/api/register"
         Alamofire.request("http://54.68.88.28/doughnation/api/register", method: .post, parameters: testParameters, encoding: JSONEncoding.default, headers: ["Authorization": DN_HEADER]).responseString(completionHandler: { (response) in
-            
+            print(response)
             guard let statusCode = response.response?.statusCode else { return }
             if statusCode == 200 {
                 doughNationUserLogin(email: email, password: password, completion: { (currentUser) in

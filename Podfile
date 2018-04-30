@@ -13,6 +13,7 @@ target 'DoughNationAppBeta' do
 	pod 'M13Checkbox'
 	pod 'IQKeyboardManager'
 	pod 'TextFieldEffects'
+	pod 'Siren'
   target 'DoughNationAppBetaTests' do
     inherit! :search_paths
     # Pods for testing

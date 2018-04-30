@@ -18,6 +18,7 @@
 		9A42213A1F5F9C77004BA4BF /* DoughNationAppBetaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4221391F5F9C77004BA4BF /* DoughNationAppBetaTests.swift */; };
 		9A4221451F5F9C77004BA4BF /* DoughNationAppBetaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4221441F5F9C77004BA4BF /* DoughNationAppBetaUITests.swift */; };
 		9A4221531F5FA052004BA4BF /* ScanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4221521F5FA052004BA4BF /* ScanVC.swift */; };
+		A3049A5D2094CB7200C83959 /* TipHistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3049A5C2094CB7200C83959 /* TipHistoryVC.swift */; };
 		A323208120211D1900E4A43A /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A323208020211D1900E4A43A /* CurrentUser.swift */; };
 		A32320832021242600E4A43A /* AlamofireFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32320822021242600E4A43A /* AlamofireFunctions.swift */; };
 		A340E44C1FFFE2E5005B9091 /* TipperScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A340E44B1FFFE2E5005B9091 /* TipperScreenVC.swift */; };
@@ -80,6 +81,7 @@
 		9A4221441F5F9C77004BA4BF /* DoughNationAppBetaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoughNationAppBetaUITests.swift; sourceTree = "<group>"; };
 		9A4221461F5F9C77004BA4BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A4221521F5FA052004BA4BF /* ScanVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanVC.swift; sourceTree = "<group>"; };
+		A3049A5C2094CB7200C83959 /* TipHistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipHistoryVC.swift; sourceTree = "<group>"; };
 		A307E1F42055C9C70050BBDD /* DoughNationAppBeta-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DoughNationAppBeta-Bridging-Header.h"; sourceTree = "<group>"; };
 		A323208020211D1900E4A43A /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 		A32320822021242600E4A43A /* AlamofireFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireFunctions.swift; sourceTree = "<group>"; };
@@ -255,6 +257,7 @@
 				A37A725C20341EE200EDBB25 /* CustomTipVC.swift */,
 				A3F6D35E20606301008653A9 /* SettingsVC.swift */,
 				A357D371206CAB3500F1BA1C /* TabBarController.swift */,
+				A3049A5C2094CB7200C83959 /* TipHistoryVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -423,6 +426,7 @@
 				"${BUILT_PRODUCTS_DIR}/HMSegmentedControl/HMSegmentedControl.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
 				"${BUILT_PRODUCTS_DIR}/M13Checkbox/M13Checkbox.framework",
+				"${BUILT_PRODUCTS_DIR}/Siren/Siren.framework",
 				"${BUILT_PRODUCTS_DIR}/TextFieldEffects/TextFieldEffects.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -432,6 +436,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HMSegmentedControl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/M13Checkbox.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Siren.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TextFieldEffects.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -593,6 +598,7 @@
 				A35966432009323400AB5058 /* LoginRegisterVC.swift in Sources */,
 				9A4221531F5FA052004BA4BF /* ScanVC.swift in Sources */,
 				A37A725D20341EE200EDBB25 /* CustomTipVC.swift in Sources */,
+				A3049A5D2094CB7200C83959 /* TipHistoryVC.swift in Sources */,
 				A323208120211D1900E4A43A /* CurrentUser.swift in Sources */,
 				A3F6D3612060652C008653A9 /* InitialVC.swift in Sources */,
 				A340E4552000B8B4005B9091 /* Constants.swift in Sources */,

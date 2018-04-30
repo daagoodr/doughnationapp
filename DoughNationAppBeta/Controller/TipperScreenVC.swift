@@ -127,7 +127,7 @@ class TipperScreenVC: UIViewController, TipperScreenDelegate {
             return
         }
         
-        let paymentAlertController = UIAlertController(title: "Please Select A Payment Method", message: "", preferredStyle: .alert)
+        let paymentAlertController = UIAlertController(title: "Tip \(self.recipName!) $\(selectedPaymentAmount)", message: "", preferredStyle: .alert)
         let applePayAction = UIAlertAction(title: "Apple Pay", style: .default, handler: {(action) in
             if PKPaymentAuthorizationViewController.canMakePayments(usingNetworks: self.supportedPaymentNetworks) {
                 self.payWithApplePay()

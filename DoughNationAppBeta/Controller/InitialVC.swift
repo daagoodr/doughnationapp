@@ -22,6 +22,7 @@ class InitialVC: UIViewController {
         } else {
             if let data = UserDefaults.standard.data(forKey: "currentUser"), let currentUser = NSKeyedUnarchiver.unarchiveObject(with: data) as? CurrentUser {
                 Singleton.main.loggedInUser = currentUser
+                print("Current User: \(currentUser)")
                 self.performSegue(withIdentifier: "ShowMainScreen", sender: self)
             }
             

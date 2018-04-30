@@ -8,6 +8,7 @@
 
 import UIKit
 import IQKeyboardManager
+import Siren
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,6 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         IQKeyboardManager.shared().isEnabled = true
         IQKeyboardManager.shared().keyboardDistanceFromTextField = 50.0
+        
+        let siren = Siren.shared
+        
         return true
     }
 
