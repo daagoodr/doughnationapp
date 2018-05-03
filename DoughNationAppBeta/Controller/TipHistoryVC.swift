@@ -9,34 +9,32 @@
 import UIKit
 import Alamofire
 
-class TipHistoryVC: UITableViewController {
+class TipHistoryVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var tableView: UITableView!
+    
+    var transactionHistory: [Transaction]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.delegate = self
+        tableView.dataSource = self
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        let bg = UIImageView(image: UIImage(named: "bg_base_main"))
+        tableView.backgroundView = bg
+        let header = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 50))
+        header.backgroundColor = UIColor.clear
+        tableView.tableHeaderView = header
 
+        guard let transactionHistory = Singleton.main.loggedInUser?.transactionHistory else { return }
+        self.transactionHistory = transactionHistory
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        print(Singleton.main.loggedInUser?.id)
-        Alamofire.request("http://54.68.88.28/doughnation/api/view-transaction-history/\(Singleton.main.loggedInUser?.id)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: ["Authorization": DN_HEADER]).responseString(completionHandler: { (response) in
-            
-            do {
-                if let data = response.data,
-                    let json = try JSONSerialization.jsonObject(with: data) as? [String: Any],
-                    let info = json["data"] as? [String:Any] {
-                    print(info)
-                } else {
-                    print("JSON: \(try JSONSerialization.jsonObject(with: response.data!) as? [String: Any])")
-                }
-            } catch {
-                print("Error deserializing JSON: \(error)")
-            }
-        })
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.tableFooterView = UIView(frame: CGRect.zero)
     }
 
     override func didReceiveMemoryWarning() {
@@ -46,22 +44,28 @@ class TipHistoryVC: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return self.transactionHistory?.count ?? 0
     }
-
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.backgroundColor = UIColor.clear
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TransactionCell
 
-        // Configure the cell...
-
+        guard let transaction = self.transactionHistory?[indexPath.row] else { return UITableViewCell() }
+        cell.dateLabel.text = transaction.transaction_date
+        cell.nameLabel.text = "\(transaction.tipper_firstname) \(transaction.tipper_lastname)"
+        cell.amountLabel.text = "\(transaction.transaction_amount)"
+        cell.timeLabel.text = transaction.transaction_time
         return cell
     }
  

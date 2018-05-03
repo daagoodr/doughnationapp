@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Alamofire
 
 class CurrentUser: NSObject, NSCoding {
     
@@ -18,7 +19,7 @@ class CurrentUser: NSObject, NSCoding {
     var email: String
     var token: String
     var creditCardID: Int?
-    
+    var transactionHistory = [Transaction]()
 
     
     init(id: Int, wePayID: Int, firstname: String, lastname: String, username: String, email: String, token: String) {
@@ -58,5 +59,25 @@ class CurrentUser: NSObject, NSCoding {
         UserDefaults.standard.synchronize()
     }
     
- 
+    func getTransactionHistory() {
+        Alamofire.request("https://doughnationgifts.com/api/view-transaction-history/\(self.id)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: ["Authorization": DN_HEADER]).responseString(completionHandler: { (response) in
+            
+            do {
+                if let data = response.data,
+                    let json = try JSONSerialization.jsonObject(with: data) as? [String: Any],
+                    let info = json["data"] as? [[String: Any]] {
+                    for trans in info {
+                        guard let transaction = Transaction(json: trans) else { continue }
+                        self.transactionHistory.append(transaction)
+                        print("Transaction: \(self.transactionHistory)")
+                    }
+                    self.synchronize()
+                } else {
+                    print("JSON: \(try JSONSerialization.jsonObject(with: response.data!) as? [String: Any])")
+                }
+            } catch {
+                print("Error deserializing JSON: \(error)")
+            }
+        })
+    }
 }

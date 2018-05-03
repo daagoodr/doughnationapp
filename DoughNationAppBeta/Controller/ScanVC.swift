@@ -17,7 +17,6 @@ class ScanVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     //ties image view for QR scan to viewcontroller
     @IBOutlet weak var square: UIView!
     
-    var videoCaptureDevice: AVCaptureDevice = AVCaptureDevice.default(for: AVMediaType.video)!
     var device = AVCaptureDevice.default(for: AVMediaType.video)
     var output = AVCaptureMetadataOutput()
     var previewLayer: AVCaptureVideoPreviewLayer?
@@ -35,7 +34,7 @@ class ScanVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     {
         
         if let data = UserDefaults.standard.data(forKey: "currentUser"), let currentUser = NSKeyedUnarchiver.unarchiveObject(with: data) as? CurrentUser {
-            Alamofire.request("http://54.68.88.28/doughnation/api/user/type/id/query/\(currentUser.id)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: ["Authorization": DN_HEADER]).responseString(completionHandler: { (response) in
+            Alamofire.request("https://doughnationgifts.com/api/user/type/id/query/\(currentUser.id)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: ["Authorization": DN_HEADER]).responseString(completionHandler: { (response) in
                 do {
                     if let data = response.data,
                         let json = try JSONSerialization.jsonObject(with: data) as? [String: Any],
@@ -75,7 +74,7 @@ class ScanVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
             let readableObject = metadata as! AVMetadataMachineReadableCodeObject
             if let components = readableObject.stringValue?.components(separatedBy: ",") {
                 if components[1] != nil {
-                    Alamofire.request("http://54.68.88.28/doughnation/api/user/type/id/query/\(components[1])", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: ["Authorization": DN_HEADER]).responseString(completionHandler: { (response) in
+                    Alamofire.request("https://doughnationgifts.com/api/user/type/id/query/\(components[1])", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: ["Authorization": DN_HEADER]).responseString(completionHandler: { (response) in
                         
                         do {
                             if let data = response.data,
@@ -109,7 +108,8 @@ class ScanVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     
     private func setupCamera() {
         
-        let input = try? AVCaptureDeviceInput(device: videoCaptureDevice)
+        guard let device = device else { return }
+        let input = try? AVCaptureDeviceInput(device: device)
         
         if self.captureSession.canAddInput(input!) {
             self.captureSession.addInput(input!)
@@ -179,7 +179,7 @@ extension ScanVC: CustomAlertViewDelegate {
     func submitButtonTapped(codeEntryValue: Int) {
         print("Entry Code Value is \(codeEntryValue)")
         
-        Alamofire.request("http://54.68.88.28/doughnation/api/user/type/id/query/\(codeEntryValue)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: ["Authorization": DN_HEADER]).responseString(completionHandler: { (response) in
+        Alamofire.request("https://doughnationgifts.com/api/user/type/id/query/\(codeEntryValue)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: ["Authorization": DN_HEADER]).responseString(completionHandler: { (response) in
             
             do {
                 if let data = response.data,

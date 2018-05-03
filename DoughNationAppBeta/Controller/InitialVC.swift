@@ -23,6 +23,7 @@ class InitialVC: UIViewController {
             if let data = UserDefaults.standard.data(forKey: "currentUser"), let currentUser = NSKeyedUnarchiver.unarchiveObject(with: data) as? CurrentUser {
                 Singleton.main.loggedInUser = currentUser
                 print("Current User: \(currentUser)")
+                currentUser.getTransactionHistory()
                 self.performSegue(withIdentifier: "ShowMainScreen", sender: self)
             }
             

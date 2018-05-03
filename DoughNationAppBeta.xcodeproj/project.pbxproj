@@ -19,6 +19,7 @@
 		9A4221451F5F9C77004BA4BF /* DoughNationAppBetaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4221441F5F9C77004BA4BF /* DoughNationAppBetaUITests.swift */; };
 		9A4221531F5FA052004BA4BF /* ScanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4221521F5FA052004BA4BF /* ScanVC.swift */; };
 		A3049A5D2094CB7200C83959 /* TipHistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3049A5C2094CB7200C83959 /* TipHistoryVC.swift */; };
+		A3049A5F2097D2EE00C83959 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3049A5E2097D2EE00C83959 /* Transaction.swift */; };
 		A323208120211D1900E4A43A /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A323208020211D1900E4A43A /* CurrentUser.swift */; };
 		A32320832021242600E4A43A /* AlamofireFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32320822021242600E4A43A /* AlamofireFunctions.swift */; };
 		A340E44C1FFFE2E5005B9091 /* TipperScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A340E44B1FFFE2E5005B9091 /* TipperScreenVC.swift */; };
@@ -34,6 +35,7 @@
 		A3614816205609C000A596F7 /* GradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3614815205609C000A596F7 /* GradientButton.swift */; };
 		A37A725D20341EE200EDBB25 /* CustomTipVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37A725C20341EE200EDBB25 /* CustomTipVC.swift */; };
 		A37A725F2036537800EDBB25 /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37A725E2036537800EDBB25 /* ViewControllerExtension.swift */; };
+		A3896BBB2098375400E88AF4 /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3896BBA2098375400E88AF4 /* TransactionCell.swift */; };
 		A3B0F0E620539B9300A2A3F8 /* CustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B0F0E520539B9300A2A3F8 /* CustomAlertView.swift */; };
 		A3B0F0EC20539F7900A2A3F8 /* CustomAlertViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B0F0EB20539F7900A2A3F8 /* CustomAlertViewDelegate.swift */; };
 		A3B0F0EE2053F92A00A2A3F8 /* TPKeyboardAvoiding in Resources */ = {isa = PBXBuildFile; fileRef = A3B0F0ED2053F92A00A2A3F8 /* TPKeyboardAvoiding */; };
@@ -82,6 +84,7 @@
 		9A4221461F5F9C77004BA4BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A4221521F5FA052004BA4BF /* ScanVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanVC.swift; sourceTree = "<group>"; };
 		A3049A5C2094CB7200C83959 /* TipHistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipHistoryVC.swift; sourceTree = "<group>"; };
+		A3049A5E2097D2EE00C83959 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		A307E1F42055C9C70050BBDD /* DoughNationAppBeta-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DoughNationAppBeta-Bridging-Header.h"; sourceTree = "<group>"; };
 		A323208020211D1900E4A43A /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 		A32320822021242600E4A43A /* AlamofireFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireFunctions.swift; sourceTree = "<group>"; };
@@ -99,6 +102,7 @@
 		A3614815205609C000A596F7 /* GradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButton.swift; sourceTree = "<group>"; };
 		A37A725C20341EE200EDBB25 /* CustomTipVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTipVC.swift; sourceTree = "<group>"; };
 		A37A725E2036537800EDBB25 /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
+		A3896BBA2098375400E88AF4 /* TransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCell.swift; sourceTree = "<group>"; };
 		A3B0F0E520539B9300A2A3F8 /* CustomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertView.swift; sourceTree = "<group>"; };
 		A3B0F0EB20539F7900A2A3F8 /* CustomAlertViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertViewDelegate.swift; sourceTree = "<group>"; };
 		A3B0F0ED2053F92A00A2A3F8 /* TPKeyboardAvoiding */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TPKeyboardAvoiding; sourceTree = "<group>"; };
@@ -232,6 +236,8 @@
 				A36148112055E2B700A596F7 /* BirthdayAlertView.swift */,
 				A36148132055E3E300A596F7 /* BirthdayAlertViewDelegate.swift */,
 				A3614815205609C000A596F7 /* GradientButton.swift */,
+				A3049A5E2097D2EE00C83959 /* Transaction.swift */,
+				A3896BBA2098375400E88AF4 /* TransactionCell.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -582,6 +588,7 @@
 			files = (
 				A3B0F0EC20539F7900A2A3F8 /* CustomAlertViewDelegate.swift in Sources */,
 				A37A725F2036537800EDBB25 /* ViewControllerExtension.swift in Sources */,
+				A3049A5F2097D2EE00C83959 /* Transaction.swift in Sources */,
 				A340E44C1FFFE2E5005B9091 /* TipperScreenVC.swift in Sources */,
 				A36148142055E3E300A596F7 /* BirthdayAlertViewDelegate.swift in Sources */,
 				A340E453200024E0005B9091 /* PaymentAmountButton.swift in Sources */,
@@ -597,6 +604,7 @@
 				A3B0F0E620539B9300A2A3F8 /* CustomAlertView.swift in Sources */,
 				A35966432009323400AB5058 /* LoginRegisterVC.swift in Sources */,
 				9A4221531F5FA052004BA4BF /* ScanVC.swift in Sources */,
+				A3896BBB2098375400E88AF4 /* TransactionCell.swift in Sources */,
 				A37A725D20341EE200EDBB25 /* CustomTipVC.swift in Sources */,
 				A3049A5D2094CB7200C83959 /* TipHistoryVC.swift in Sources */,
 				A323208120211D1900E4A43A /* CurrentUser.swift in Sources */,

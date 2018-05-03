@@ -96,8 +96,7 @@ func doughNationUserLogin(email: String, password: String, completion: ((Current
     
     let parameters: Parameters = ["email":email,
                                   "password":password]
-    //"https://www.doughnationgifts.com/api/login"
-    Alamofire.request("http://54.68.88.28/doughnation/api/login", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: ["Authorization": DN_HEADER]).responseString(completionHandler: { (response) in
+    Alamofire.request("https://www.doughnationgifts.com/api/login", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: ["Authorization": DN_HEADER]).responseString(completionHandler: { (response) in
         
         print(response.value)
         
@@ -126,6 +125,9 @@ func doughNationUserLogin(email: String, password: String, completion: ((Current
                 UserDefaults.standard.set(encodedUser, forKey: "currentUser")
                 UserDefaults.standard.set(true, forKey: "userIsLoggedIn")
                 UserDefaults.standard.synchronize()
+                
+                currentUser.getTransactionHistory()
+                
                 if completion != nil { completion!(currentUser) }
             }
         } catch {
@@ -140,6 +142,8 @@ func wePayUserLogout() {
             //Not sure how this process should work.
     })
 }
+
+
 
 
 

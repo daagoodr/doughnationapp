@@ -45,8 +45,6 @@ class LoginRegisterVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate,
     @IBOutlet weak var checkbox1: M13Checkbox!
     @IBOutlet weak var checkbox2: M13Checkbox!
     
-    
-    var videoCaptureDevice: AVCaptureDevice = AVCaptureDevice.default(for: AVMediaType.video)!
     var device = AVCaptureDevice.default(for: AVMediaType.video)
     var output = AVCaptureMetadataOutput()
     var previewLayer: AVCaptureVideoPreviewLayer?
@@ -140,8 +138,8 @@ class LoginRegisterVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate,
                                       "company": companyField.text!]
         */
         
-        //"https://www.doughnationgifts.com/api/register"
-        Alamofire.request("http://54.68.88.28/doughnation/api/register", method: .post, parameters: testParameters, encoding: JSONEncoding.default, headers: ["Authorization": DN_HEADER]).responseString(completionHandler: { (response) in
+        //
+        Alamofire.request("https://www.doughnationgifts.com/api/register", method: .post, parameters: testParameters, encoding: JSONEncoding.default, headers: ["Authorization": DN_HEADER]).responseString(completionHandler: { (response) in
             print(response)
             guard let statusCode = response.response?.statusCode else { return }
             if statusCode == 200 {
@@ -225,7 +223,8 @@ class LoginRegisterVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate,
     
     private func setupCamera() {
         
-        let input = try? AVCaptureDeviceInput(device: videoCaptureDevice)
+        guard let device = device else { return }
+        let input = try? AVCaptureDeviceInput(device: device)
         
         if self.captureSession.canAddInput(input!) {
             self.captureSession.addInput(input!)
@@ -305,7 +304,7 @@ extension LoginRegisterVC: CustomAlertViewDelegate {
     func submitButtonTapped(codeEntryValue: Int) {
         print("Entry Code Value is \(codeEntryValue)")
         
-        Alamofire.request("http://54.68.88.28/doughnation/api/user/type/id/query/\(codeEntryValue)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: ["Authorization": DN_HEADER]).responseString(completionHandler: { (response) in
+        Alamofire.request("https://doughnationgifts.com/api/user/type/id/query/\(codeEntryValue)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: ["Authorization": DN_HEADER]).responseString(completionHandler: { (response) in
             
             do {
                 if let data = response.data,
